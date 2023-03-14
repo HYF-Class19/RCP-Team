@@ -27,4 +27,4 @@ We still exploring Apis to fetch the data from backend
 
 We will be using **Strapi** as backend and will store all the data there.
 
-### Entity relation diagram is below
+#### Entity relation diagram is below
