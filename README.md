@@ -34,7 +34,7 @@ We have used the following technology in building the application:
 
 ## Project aspect and roles
 
-You can find all the project aspect and the main roles for each.
+Each of the team participates in all the tasks of the project. But based on the strengths of each participant, we assigned the roles. You can find all the project aspect and the main roles for each.
 
 - Management [John](https://github.com/johnedelbi)
 - Documentation (All of us)
@@ -101,6 +101,8 @@ Here is some screenshots from the design
 ![logo](public/assets/design/../RCP-logo.jpg)
 ![logo](public/assets/design/../RCP-logo.jpg)
 ![logo](public/assets/design/../RCP-logo.jpg)
+
+Our design prototype-1 [here](prototype1.md)
 
 ## Naming agreed roles
 
