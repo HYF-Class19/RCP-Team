@@ -10,4 +10,10 @@
 #### Homepage prototype mobile:
 ![Homepage-mobile](public/assets/design/prototype1-mobile-homepage.png)
 
+#### Recipe page prototype desktop:
+![Recipe-desktop](public/assets/design/one-recipe-proto-desktop.png)
+
+#### Recipe page prototype desktop:
+![Recipe-mobile](public/assets/design/one-recipe-proto-mobile.png)
+
 ###### To create a prototype, we use ["Excalidrow" platform](https://excalidraw.com/)
