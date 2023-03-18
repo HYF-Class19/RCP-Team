@@ -1,7 +1,6 @@
 # Contents
 
 - [Contents](#contents)
-  - [User-personas](#user-personas)
   - [What can I cook?](#what-can-i-cook)
   - [Tech](#tech)
   - [Project aspect and roles](#project-aspect-and-roles)
@@ -9,14 +8,7 @@
     - [Must be](#must-be)
     - [Should be](#should-be)
     - [Could be](#could-be)
-  - [The RoadMap](#the-roadmap)
-  - [Design source](#design-source)
-  - [Naming agreed roles](#naming-agreed-roles)
-
-## User-personas
-
-- [Health-Conscious Consumers](/user-persona1.md)
-- [Belgian IT Professionals](/user-persona2.md)
+  - [User-personas](#user-personas)
   - [The RoadMap](#the-roadmap)
   - [Design source](#design-source)
   - [Naming agreed roles](#naming-agreed-roles)
@@ -75,6 +67,11 @@ Each of the team participates in all the tasks of the project. But based on the 
 - Comments
 - Favorite recipes
 - Adding user’s recipes
+
+## User-personas
+
+- [Health-Conscious Consumers](/user-persona1.md)
+- [Belgian IT Professionals](/user-persona2.md)
 
 ## The RoadMap
 
