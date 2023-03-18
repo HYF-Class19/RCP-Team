@@ -2,9 +2,9 @@
 
 ## Bio
 
-**Name**: Elida
-**Age**: 40
-**Profession**: IT professional
+**Name**: Elida \
+**Age**: 40 \
+**Profession**: IT professional \
 **Nationality**: Belgium
 
 Elida is working in IT firm where she goes on lunch with her indian colleague and tastes their food. she find that Indian food are really good and would like to find the recipe to cook at her home but currently she is not able to find some authentic recipe website
