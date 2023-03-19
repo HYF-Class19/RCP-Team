@@ -3,10 +3,6 @@
 - [Contents](#contents)
   - [What can I cook?](#what-can-i-cook)
   - [Project aspect and roles](#project-aspect-and-roles)
-  - [Agile planning](#agile-planning)
-    - [Must be](#must-be)
-    - [Should be](#should-be)
-    - [Could be](#could-be)
   - [The RoadMap](#the-roadmap)
   - [some Screenshots](#some-screenshots)
 
@@ -31,29 +27,6 @@ Each of the team participates in all the tasks of the project. But based on the 
 - Code [John](https://github.com/johnedelbi) | [Bibha](https://github.com/bibhasingh) | [Brian](https://github.com/BrianMunene96)
 - Unit testing (All of us)
 - Presentation [Brian](https://github.com/BrianMunene96)
-
-## Agile planning
-
-![Agile planning](public/assets/design/../Agile.jpg)
-
-### Must be
-
-- API for recipes
-- Filters (ingredients, kitchen type, time needed, type (allergies, vegan, low-calorie and other))
-- Faceted search (?)
-
-### Should be
-
-- Random recipes
-- User account
-- Multiple ingredients filter
-
-### Could be
-
-- Rating
-- Comments
-- Favorite recipes
-- Adding user’s recipes
 
 ## The RoadMap
 
