@@ -2,16 +2,14 @@
 
 - [Contents](#contents)
   - [What can I cook?](#what-can-i-cook)
-  - [Tech](#tech)
   - [Project aspect and roles](#project-aspect-and-roles)
   - [Agile planning](#agile-planning)
     - [Must be](#must-be)
     - [Should be](#should-be)
     - [Could be](#could-be)
-    - [User Personas](#user-personas)
+  - [User-personas](#user-personas)
   - [The RoadMap](#the-roadmap)
   - [Design source](#design-source)
-  - [Naming agreed roles](#naming-agreed-roles)
 
 ![logo](public/assets/design/../RCP-logo.jpg)
 
@@ -22,16 +20,6 @@ A unique recipe site that solves a basic problem in our lives.
 Where you can choose the ingredients you have available at home and it will find the best matching recipes
 
 You can also exclude some ingredients that you do not like or have food allergies to.
-
-## Tech
-
-We have used the following technology in building the application:
-
-1. Html
-2. CSS
-3. [React](https://ionicframework.com/)
-4. [Ionicframework](https://ionicframework.com) or [PrimeReact](https://primereact.org)
-5. [Figma](https://www.figma.com/)
 
 ## Project aspect and roles
 
@@ -73,7 +61,6 @@ Each of the team participates in all the tasks of the project. But based on the 
 - [Health-Conscious Consumers](/user-persona1.md)
 - [Belgian IT Professionals](/user-persona2.md)
 
-
 ## The RoadMap
 
 ![RoadMap](public/assets/design/../roadmap.jpg)
@@ -111,8 +98,4 @@ Here is some screenshots from the design
 
 Our design prototype-1 [here](prototype1.md)
 
-## Naming agreed roles
 
-- CSS naming: lower-case with dashes
-- React naming: camel case
-- Branch naming: 00-name-v0
