@@ -7,9 +7,8 @@
     - [Must be](#must-be)
     - [Should be](#should-be)
     - [Could be](#could-be)
-  - [User-personas](#user-personas)
   - [The RoadMap](#the-roadmap)
-  - [Design source](#design-source)
+  - [some Screenshots](#some-screenshots)
 
 ![logo](public/assets/design/../RCP-logo.jpg)
 
@@ -56,11 +55,6 @@ Each of the team participates in all the tasks of the project. But based on the 
 - Favorite recipes
 - Adding user’s recipes
 
-## User-personas
-
-- [Health-Conscious Consumers](/user-persona1.md)
-- [Belgian IT Professionals](/user-persona2.md)
-
 ## The RoadMap
 
 ![RoadMap](public/assets/design/../roadmap.jpg)
@@ -85,17 +79,7 @@ After brainstorming with the team, we decided to divide the project into several
 
 In the coming weeks the rest will be added.
 
-## Design source
-
-You can check the figma source [here](https://www.figma.com/file/)
-
-Here is some screenshots from the design
+## some Screenshots
 
 ![logo](public/assets/design/../RCP-logo.jpg)
 ![logo](public/assets/design/../RCP-logo.jpg)
-![logo](public/assets/design/../RCP-logo.jpg)
-![logo](public/assets/design/../RCP-logo.jpg)
-
-Our design prototype-1 [here](prototype1.md)
-
-
