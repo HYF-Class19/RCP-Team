@@ -3,13 +3,8 @@
 - [Contents](#contents)
   - [What can I cook?](#what-can-i-cook)
   - [Project aspect and roles](#project-aspect-and-roles)
-  - [Agile planning](#agile-planning)
-    - [Must be](#must-be)
-    - [Should be](#should-be)
-    - [Could be](#could-be)
-  - [User-personas](#user-personas)
   - [The RoadMap](#the-roadmap)
-  - [Design source](#design-source)
+  - [some Screenshots](#some-screenshots)
 
 ![logo](public/assets/design/../RCP-logo.jpg)
 
@@ -32,34 +27,6 @@ Each of the team participates in all the tasks of the project. But based on the 
 - Code [John](https://github.com/johnedelbi) | [Bibha](https://github.com/bibhasingh) | [Brian](https://github.com/BrianMunene96)
 - Unit testing (All of us)
 - Presentation [Brian](https://github.com/BrianMunene96)
-
-## Agile planning
-
-![Agile planning](public/assets/design/../Agile.jpg)
-
-### Must be
-
-- API for recipes
-- Filters (ingredients, kitchen type, time needed, type (allergies, vegan, low-calorie and other))
-- Faceted search (?)
-
-### Should be
-
-- Random recipes
-- User account
-- Multiple ingredients filter
-
-### Could be
-
-- Rating
-- Comments
-- Favorite recipes
-- Adding user’s recipes
-
-## User-personas
-
-- [Health-Conscious Consumers](/user-persona1.md)
-- [Belgian IT Professionals](/user-persona2.md)
 
 ## The RoadMap
 
@@ -85,17 +52,7 @@ After brainstorming with the team, we decided to divide the project into several
 
 In the coming weeks the rest will be added.
 
-## Design source
-
-You can check the figma source [here](https://www.figma.com/file/)
-
-Here is some screenshots from the design
+## some Screenshots
 
 ![logo](public/assets/design/../RCP-logo.jpg)
 ![logo](public/assets/design/../RCP-logo.jpg)
-![logo](public/assets/design/../RCP-logo.jpg)
-![logo](public/assets/design/../RCP-logo.jpg)
-
-Our design prototype-1 [here](prototype1.md)
-
-
