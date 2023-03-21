@@ -2,15 +2,9 @@
 
 - [Contents](#contents)
   - [What can I cook?](#what-can-i-cook)
-  - [Tech](#tech)
   - [Project aspect and roles](#project-aspect-and-roles)
-  - [Agile planning](#agile-planning)
-    - [Must be](#must-be)
-    - [Should be](#should-be)
-    - [Could be](#could-be)
   - [The RoadMap](#the-roadmap)
-  - [Design source](#design-source)
-  - [Naming agreed roles](#naming-agreed-roles)
+  - [some Screenshots](#some-screenshots)
 
 ![logo](public/assets/design/../RCP-logo.jpg)
 
@@ -21,16 +15,6 @@ A unique recipe site that solves a basic problem in our lives.
 Where you can choose the ingredients you have available at home and it will find the best matching recipes
 
 You can also exclude some ingredients that you do not like or have food allergies to.
-
-## Tech
-
-We have used the following technology in building the application:
-
-1. Html
-2. CSS
-3. [React](https://ionicframework.com/)
-4. [Ionicframework](https://ionicframework.com) or [PrimeReact](https://primereact.org)
-5. [Figma](https://www.figma.com/)
 
 ## Project aspect and roles
 
@@ -43,29 +27,6 @@ Each of the team participates in all the tasks of the project. But based on the 
 - Code [John](https://github.com/johnedelbi) | [Bibha](https://github.com/bibhasingh) | [Brian](https://github.com/BrianMunene96)
 - Unit testing (All of us)
 - Presentation [Brian](https://github.com/BrianMunene96)
-
-## Agile planning
-
-![Agile planning](public/assets/design/../Agile.jpg)
-
-### Must be
-
-- API for recipes
-- Filters (ingredients, kitchen type, time needed, type (allergies, vegan, low-calorie and other))
-- Faceted search (?)
-  
-### Should be
-
-- Random recipes
-- User account
-- Multiple ingredients filter
-
-### Could be
-
-- Rating
-- Comments
-- Favorite recipes
-- Adding user’s recipes
 
 ## The RoadMap
 
@@ -91,21 +52,7 @@ After brainstorming with the team, we decided to divide the project into several
 
 In the coming weeks the rest will be added.
 
-## Design source
-
-You can check the figma source [here](https://www.figma.com/file/)
-
-Here is some screenshots from the design
+## some Screenshots
 
 ![logo](public/assets/design/../RCP-logo.jpg)
 ![logo](public/assets/design/../RCP-logo.jpg)
-![logo](public/assets/design/../RCP-logo.jpg)
-![logo](public/assets/design/../RCP-logo.jpg)
-
-Our design prototype-1 [here](prototype1.md)
-
-## Naming agreed roles
-
-- CSS naming: lower-case with dashes
-- React naming: camel case
-- Branch naming: 00-name-v0
