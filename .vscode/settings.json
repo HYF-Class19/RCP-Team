@@ -3,8 +3,11 @@
         "Elida",
         "Excalidrow",
         "ionicframework",
+        "signin",
+        "signup",
         "spoonacular",
         "themealdb",
         "wireframesketcher"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
