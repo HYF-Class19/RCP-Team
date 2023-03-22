@@ -1,7 +1,7 @@
 # what can i cook planning index
 
 - [1-communication-plan]( /planning/1-communication-plan.md)
-- [2-constraits]( /planning/2-constraits.md)
+- [2-constrains]( /planning/2-constrains.md)
 - [3-user-persona]( /planning/3-user-persona.md)
 - [4-backlog]( /planning/4-backlog.md)
 - [5-prototype]( /planning/5-prototype.md)
