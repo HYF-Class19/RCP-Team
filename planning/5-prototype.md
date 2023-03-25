@@ -10,11 +10,11 @@ Here is the final prototype
 
 ## Homepage
 
-![homepage img](./Assets/home.jpg)
+![homepage img](./Assets/prototype-homepage-final.png)
 
 ## filters
 
-![filters img](./Assets/home.jpg)
+![filters img](./Assets/prototype-filterpage-final.png)
 
 ## single recipe
 
