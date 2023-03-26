@@ -7,11 +7,15 @@ Here is all the design
 
 ## Homepage
 
-![homepage img](./Assets/home.jpg)
+![homepage](./Assets/figma-homepage.png)
+![figma mobile](./Assets/figma-mobile.png)
+![homepage mobile](./Asset/../Assets/figma-mobile-homepage.png)
+![custom dropdown menu](./Assets/figma-mobile-dropdown.png)
+![custom pop-up filter](./Assets/figma-mobile-popupfilter.png)
+## Filter-page
 
-## filters
-
-![filters img](./Assets/home.jpg)
+![filter](./Assets/figma-filterpage.png)
+![filter mobile](./Assets/figma-mobile-filterpage.png)
 
 ## single recipe
 
