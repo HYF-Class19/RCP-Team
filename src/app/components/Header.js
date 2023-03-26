@@ -1,10 +1,8 @@
-import React from 'react';
 import './Header.css';
-import 'primeicons/primeicons.css';
 import Image from 'next/image';
 import logo from '../../../public/assets/logo.png';
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className="header">
       <Image src={logo} alt="logo" width={202} />
@@ -31,5 +29,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;
