@@ -1,0 +1,68 @@
+.wrapper {
+  margin-top: 10px;
+  width: 297px;
+}
+
+.wrapper input {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  background-color: #d9d9d9;
+  width: 90%;
+  height: 38.91px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding-left: 8px;
+}
+
+.wrapper input:focus {
+  outline-color: orange;
+  outline-style: solid;
+  outline-width: 3px;
+  border: none;
+}
+
+.pi.pi-arrow-circle-right {
+  font-size: 1.6rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  margin-left: 3px;
+}
+
+.pi.pi-arrow-circle-right:hover,
+.ingredient-btn:hover {
+  cursor: pointer;
+}
+
+.selected-ingredients {
+  margin-top: 10px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ingredient-btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #d9d9d9;
+  padding: 8px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.pi.pi-minus-circle {
+  font-size: 1.3rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  margin-left: 3px;
+}

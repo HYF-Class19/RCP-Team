@@ -1,0 +1,31 @@
+.dietary {
+  margin-bottom: 25px;
+}
+
+.dietary h2 {
+  font-weight: 400;
+  font-size: 26px;
+  padding-bottom: 10px;
+}
+
+.select-diet {
+  padding-left: 20px;
+}
+
+.select-diet label {
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 11px;
+}
+
+input[type='checkbox'] {
+  font: inherit;
+  width: 20px;
+  font: inherit;
+  accent-color: orange;
+  width: 25px;
+  height: 25px;
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  transform: translateY(0.3em);
+}
