@@ -1,0 +1,19 @@
+.container {
+    background-color: rgba(175, 187, 171, 0.33);
+    width: 100%;
+    padding: 20px;
+}
+
+.slide {
+    background: rgba(36, 80, 61, 0.7);
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
