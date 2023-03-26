@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
-import Image from 'next/image';
 import { classNames } from 'primereact/utils';
+import Image from 'next/image';
 import styles from './SlideShow.module.css';
-import 'primeflex/primeflex.css';
-
 
 
 export const SlideShow = () => {
     const [recipes, setRecipes] = useState([]);
 
     const fetchRecipes = async () => {
-        const response = await fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=ea39901342fe48f09ee98db9646b139d`);
+        const response = await fetch(`https://api.spoonacular.com/recipes/random?number=3&apiKey=ea39901342fe48f09ee98db9646b139d`);
         const data = await response.json();
         setRecipes(data.recipes);
     }
