@@ -1,8 +1,7 @@
-import React from 'react';
 import './NavBar.css';
-import 'primeicons/primeicons.css';
 
-const NavBar = () => {
+
+export const NavBar = () => {
   return (
     <div className="navbar">
       <input type="checkbox" id="toggle" />
@@ -80,5 +79,3 @@ const NavBar = () => {
     </div>
   );
 };
-
-export default NavBar;
