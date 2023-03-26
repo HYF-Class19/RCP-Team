@@ -3,23 +3,35 @@ import React from "react";
 import "primeicons/primeicons.css";
 import "./Footer.css";
 import "/node_modules/primeflex/primeflex.css";
-import "primereact/resources/themes/bootstrap4-light-blue/theme.css";
+// import "primereact/resources/themes/vela-green/theme.css";
 import { Button } from "primereact/button";
 
 const Footer = () => {
   return (
     <>
-      <div className="footer flex md:flex-auto ">
-        <div className="flex gap-4 align-self-center ">
-          <Button label="About Us" severity="success" />
+      <div className="footer">
+        <div className="flex gap-4 align-self-center buttons">
+          <a href="#">
+            <Button label="About Us" className="footerB" />
+          </a>
 
-          <Button label="Contact" severity="success" />
-          <Button label="Terms Of Use" severity="success" />
+          <a href="#">
+            <Button label="Contact" className="footerB" />
+          </a>
+          <a href="#">
+            <Button label="Terms Of Use" className="footerB" />
+          </a>
         </div>
-        <div className="align-content-end  flex gap-4 align-self-center">
-          <i className="pi pi-facebook iconStyle" />
-          <i className="pi pi-instagram iconStyle" />
-          <i className="pi pi-twitter iconStyle" />
+        <div className="align-content-end  flex gap-4 align-self-center icons">
+          <a href="https://fr-fr.facebook.com/">
+            <i className="pi pi-facebook iconStyle" />
+          </a>
+          <a href="https://www.instagram.com/">
+            <i className="pi pi-instagram iconStyle" />
+          </a>
+          <a href="https://twitter.com/?lang=fr">
+            <i className="pi pi-twitter iconStyle" />
+          </a>
         </div>
       </div>
     </>

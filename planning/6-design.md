@@ -15,7 +15,9 @@ Here is all the design
 
 ## single recipe
 
-![single recipe img](./Assets/home.jpg)
+![single recipe page prototype desktop](./Assets/one-recipe-proto-desktop.png)
+![single recipe page prototype mobile](.Assets/../Assets/one-recipe-proto-mobile.png)
+![single recipe page figma design](./Assets/one-recipe-figma.png)
 
 ## user account
 
