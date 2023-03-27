@@ -10,7 +10,7 @@ export const SlideShow = () => {
     const [recipes, setRecipes] = useState([]);
 
     const fetchRecipes = async () => {
-        const response = await fetch(`https://api.spoonacular.com/recipes/random?number=3&apiKey=youkey`);
+        const response = await fetch(`https://api.spoonacular.com/recipes/random?number=3&apiKey=yourkey`);
         const data = await response.json();
         setRecipes(data.recipes);
     }
@@ -21,23 +21,24 @@ export const SlideShow = () => {
 
     const itemTemplate = (recipe) => {
         return (
-            <>
-                <div className="p-col-12 p-md-7 p-d-flex p-flex-column p-jc-center p-ai-center">
-                    <h2 className={styles.title}>{recipe.title}</h2>
-                    <Button label="Check Recipe" icon="pi pi-angle-right" className="p-button-rounded p-button-lg" />
+            <div className="flex align-content-center">
+                <div className='flex-1 align-items-stretch'>
+                    <h2 className='mb-1'>{recipe.title}</h2>
+                    <Button label="Check Recipe" severity="secondary" icon="pi pi-search" />
                 </div>
-                <div className="p-col-12 p-md-5 p-d-flex p-jc-center p-ai-center">
-                    <Image src={recipe.image} alt={recipe.title} width={525} height={350} />
+                <div className="flex-1 align-items-stretch">
+                    <Image className="w-8 shadow-2" src={recipe.image} alt={recipe.title} width={525} height={350} />
                 </div>
-            </>
+            </div>
+
         );
     }
 
     return (
         <div className={styles.container}>
-            <div className={classNames('p-grid', styles.slide)}>
+            <div className={classNames('align-content-center', styles.slide)}>
                 {recipes?.length > 0 ? (
-                    <Carousel value={recipes} itemTemplate={itemTemplate} numVisible={1} />
+                    <Carousel value={recipes} itemTemplate={itemTemplate} numVisible={1} numScroll={1} circular autoplayInterval={3000} />
                 ) : (
                     <p>Loading...</p>
                 )}
