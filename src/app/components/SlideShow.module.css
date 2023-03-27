@@ -1,12 +1,13 @@
 .container {
     background-color: rgba(175, 187, 171, 0.33);
     width: 100%;
-    padding: 20px;
+    padding: 60px;
 }
 
 .slide {
     background: rgba(36, 80, 61, 0.7);
     border-radius: 30px;
+    min-height: 490px;
     padding: 20px;
 }
 
