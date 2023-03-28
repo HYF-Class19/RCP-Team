@@ -1,72 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
 
+.recipes-panel {
+  display: flex;
+  flex-direction: column;
+}
+
 .show-recipes {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
   color: black;
-  background-color: palevioletred;
   margin-top: 123px;
   width: 940px;
-  height: 800px;
-  padding-left: 72px;
-  padding-top: 80px;
+  height: 1000px;
+  padding-left: 85px;
+  /* padding-top: 50px; */
 
   display: flex;
   flex-wrap: wrap;
   gap: 42px;
 }
 
-.single-recipe {
-  width: 220px;
-  height: 280px;
-}
-
-.single-recipe .recipe-image {
-  border-radius: 26px;
-}
-
-.time-difficulty {
-  border: 2px solid black;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 3px 5px;
-}
-
-.time-difficulty h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 77px;
-  height: 32px;
-  background: #f1c644;
-  border-radius: 6px;
-  font-family: 'Ubuntu';
-  font-weight: 500;
-  font-size: 21px;
-}
-
-.pi.pi-clock {
-  font-size: 16px;
-  background-color: black;
-  border-radius: 50%;
-  color: white;
-  margin-left: 13px;
-}
-
-.recipe-title {
-  margin-top: 15px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.recipe-title h3 {
-  font-family: 'Ubuntu';
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 27.58px;
+.show-pages {
+  padding: 20px;
 }
