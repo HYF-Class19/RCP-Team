@@ -10,7 +10,7 @@ export const SlideShow = () => {
 
   const fetchRecipes = async () => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/random?number=3&apiKey=yourkey`
+      `https://api.spoonacular.com/recipes/random?number=3&apiKey=yourApiKey`
     );
     const data = await response.json();
     setRecipes(data.recipes);

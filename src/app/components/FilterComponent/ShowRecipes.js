@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './ShowRecipes.css';
-import 'primeicons/primeicons.css';
 import { RecipeCard } from './RecipeCard';
 import { Paginate } from './Paginate';
+
+// example for the complex filter for the future
+const diet = {};
 
 export const ShowRecipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [url, setUrl] = useState(
-    'https://api.spoonacular.com/recipes/complexSearch?cuisine=french,american,chinese,italian,african&number=56&apiKey=dd5c172973c04526bd48a30d4926cafb'
+    `https://api.spoonacular.com/recipes/complexSearch?cuisine=french,american,chinese,italian,african&number=5&diet=${diet}&apiKey=YourApiKey`
   );
   const [loading, setLoading] = useState(true);
 
@@ -15,10 +17,7 @@ export const ShowRecipes = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
 
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
+  // FETCH INITIAL RECIPE RESULTS WILL BE RECIPES WITH A SPECIFIC ID
   const fetchRecipes = async () => {
     const response = await fetch(url);
     const data = await response.json();
@@ -28,10 +27,11 @@ export const ShowRecipes = () => {
     setLoading(false);
   };
 
+  // GET RECIPE INFORMATION BASED ON THE ID
   const getRecipeInformation = async (response) => {
     response.map(async (item) => {
       const recipe = await fetch(
-        `https://api.spoonacular.com/recipes/${item.id}/information?apiKey=dd5c172973c04526bd48a30d4926cafb`
+        `https://api.spoonacular.com/recipes/${item.id}/information?apiKey=yourApiKey`
       );
 
       const recipeData = await recipe.json();
@@ -47,9 +47,14 @@ export const ShowRecipes = () => {
     fetchRecipes();
   }, [url]);
 
+  // HANDLE PAGINATION
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = recipes.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   const previousPage = () => {
     if (currentPage !== 1) {

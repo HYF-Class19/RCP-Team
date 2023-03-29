@@ -24,7 +24,9 @@ export const RecipeCard = ({ recipes, loading }) => {
                   height={156}
                 />
                 <div className="time-difficulty">
-                  <h3>Easy</h3>
+                  <h3>
+                    {item.servings} <i className="pi pi-users"></i>
+                  </h3>
                   <h3>
                     {item.readyInMinutes} <i className="pi pi-clock"></i>
                   </h3>
