@@ -12,6 +12,7 @@ Here is all the design
 ![homepage mobile](./Asset/../Assets/figma-mobile-homepage.png)
 ![custom dropdown menu](./Assets/figma-mobile-dropdown.png)
 ![custom pop-up filter](./Assets/figma-mobile-popupfilter.png)
+
 ## Filter-page
 
 ![filter](./Assets/figma-filterpage.png)
@@ -23,6 +24,20 @@ Here is all the design
 ![single recipe page prototype mobile](.Assets/../Assets/one-recipe-proto-mobile.png)
 ![single recipe page figma design](./Assets/one-recipe-figma.png)
 
-## user account
+## Contact Us
 
-![ser account img](./Assets/home.jpg)
+![Contact us page](./Assets/figma-contact-page.png)
+![Contact us mobile ](./Assets/figma-mobile-contact-page.png)
+
+## User Account
+
+![User account](./Assets/figma-userccount.png)
+![User account mobile full](./Assets/figma-mobile-2.png)
+![User account mobile](./Assets/figma-mobile-useraccount.png)
+![User account registration pop-up](./Assets/figma-mobile-registrationpopup.png)
+![User account login pop-up](./Assets/figma-mobile-loginpopup.png)
+
+## Add Recipe
+
+![Add recipe page](./Assets/figma-add-recipe.png)
+![Add recipe mobile](./Assets/figma-mobile-add-recipe.png)
