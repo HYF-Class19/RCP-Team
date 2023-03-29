@@ -5,6 +5,7 @@
   - [Project aspect and roles](#project-aspect-and-roles)
   - [The RoadMap](#the-roadmap)
   - [some Screenshots](#some-screenshots)
+  - [npm Library used](#npm-library-used)
 
 ![logo](public/assets/design/../RCP-logo.jpg)
 
@@ -56,3 +57,11 @@ In the coming weeks the rest will be added.
 
 ![logo](public/assets/design/../RCP-logo.jpg)
 ![logo](public/assets/design/../RCP-logo.jpg)
+
+## npm Library used
+
+- `npm install`
+- `npm install primereact primeicons`
+- `npm i uuid`
+- `npm i primeflex`
+- `npm install firebase`
