@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
+
+.recipes-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-recipes {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  color: black;
+  margin-top: 123px;
+  width: 940px;
+  height: 1000px;
+  padding-left: 85px;
+  /* padding-top: 50px; */
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 42px;
+}
+
+.show-pages {
+  padding: 20px;
+}

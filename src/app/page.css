@@ -9,3 +9,7 @@
   background-color: white;
   color: black;
 }
+
+.filter-showcase {
+  display: flex;
+}
