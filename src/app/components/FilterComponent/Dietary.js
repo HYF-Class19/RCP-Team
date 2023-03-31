@@ -12,11 +12,18 @@ export const Dietary = () => {
             id="vegetarian"
             name="diets"
             value="vegetarian"
+            className="checkbox"
           />
           <label for="vegetarian">Vegetarian</label>
         </div>
         <div>
-          <input type="checkbox" id="vegan" name="diets" value="vegan" />
+          <input
+            type="checkbox"
+            id="vegan"
+            name="diets"
+            value="vegan"
+            className="checkbox"
+          />
           <label for="vegan">Vegan</label>
         </div>
         <div>
@@ -25,6 +32,7 @@ export const Dietary = () => {
             id="gluten-free"
             name="diets"
             value="gluten-free"
+            className="checkbox"
           />
           <label for="gluten-free">Gluten free</label>
         </div>
@@ -34,11 +42,18 @@ export const Dietary = () => {
             id="ketogenic"
             name="diets"
             value="ketogenic"
+            className="checkbox"
           />
           <label for="ketogenic">Ketogenic</label>
         </div>
         <div>
-          <input type="checkbox" id="paleo" name="diets" value="paleo" />
+          <input
+            type="checkbox"
+            id="paleo"
+            name="diets"
+            value="paleo"
+            className="checkbox"
+          />
           <label for="paleo">Paleo</label>
         </div>
       </div>

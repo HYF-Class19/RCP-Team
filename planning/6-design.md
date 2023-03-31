@@ -7,22 +7,69 @@ Here is all the design
 
 ## Homepage
 
-![homepage](./Assets/figma-homepage.png)
+<img src="./Assets/figma-homepage.png" width="600" />
+
 ![figma mobile](./Assets/figma-mobile.png)
-![homepage mobile](./Asset/../Assets/figma-mobile-homepage.png)
-![custom dropdown menu](./Assets/figma-mobile-dropdown.png)
-![custom pop-up filter](./Assets/figma-mobile-popupfilter.png)
-## Filter-page
 
-![filter](./Assets/figma-filterpage.png)
-![filter mobile](./Assets/figma-mobile-filterpage.png)
 
-## single recipe
+<img src="./Asset/../Assets/figma-mobile-homepage.png" width="200" />
+<img src="./Assets/figma-mobile-dropdown.png" width="200" />
+<img src="./Assets/figma-mobile-popupfilter.png" width="200" />
+<br>
+<br>
+<br>
 
-![single recipe page prototype desktop](./Assets/one-recipe-proto-desktop.png)
-![single recipe page prototype mobile](.Assets/../Assets/one-recipe-proto-mobile.png)
-![single recipe page figma design](./Assets/one-recipe-figma.png)
+## Filter page
 
-## user account
+<img src="./Assets/figma-filterpage.png" width="600" />
+<img src="./Assets/figma-mobile-filterpage.png" width="200" />
+<br>
+<br>
+<br>
 
-![ser account img](./Assets/home.jpg)
+## Single Recipe page
+
+<img src="./Assets/one-recipe-figma.png" width="800" />
+<br>
+<br>
+<br>
+
+## Contact Us page
+
+<img src="./Assets/figma-contact-page.png" width="600" />
+<img src="./Assets/figma-mobile-contact-page.png" width="200" />
+<br>
+<br>
+<br>
+
+## User Account page
+
+<img src="./Assets/figma-userccount.png" width="600" />
+<img src="./Assets/figma-mobile-2.png" width="700" />
+<br>
+<br>
+<br>
+
+
+## Add Recipe page
+
+<img src="./Assets/figma-add-recipe.png" width="600" />
+<img src="./Assets/figma-mobile-add-recipe.png" width="200" />
+<br>
+<br>
+<br>
+
+## About Us page
+<img src="./Assets/about-us.png" width="800" />
+<br>
+<br>
+<br>
+
+## Favorite Recipes page
+<img src="./Assets/favorite.png" width="800" />
+<br>
+<br>
+<br>
+
+## Terms Of Use page 
+<img src="./Assets/terms-of-use.png" width="800" />

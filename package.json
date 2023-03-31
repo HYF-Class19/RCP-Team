@@ -12,6 +12,7 @@
     "dotenv": "^16.0.3",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "firebase": "^9.18.0",
     "next": "^13.2.4",
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",

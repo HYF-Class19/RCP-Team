@@ -50,11 +50,11 @@
   display: initial;
 }
 
-input[type='checkbox'] {
+#toggle {
   display: none;
 }
 
-input[type='checkbox'] ~ label {
+#toggle ~ label {
   font-family: 'Ubuntu';
   font-size: 25px;
   font-weight: 700;
@@ -65,7 +65,7 @@ input[type='checkbox'] ~ label {
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 767.98px) {
-  input[type='checkbox'] ~ label {
+  #toggle ~ label {
     display: initial;
   }
 
@@ -102,7 +102,7 @@ input[type='checkbox'] ~ label {
     width: 100%;
   }
 
-  input[type='checkbox']:checked ~ label ~ .parentList {
+  #toggle:checked ~ label ~ .parentList {
     display: none;
   }
 }
