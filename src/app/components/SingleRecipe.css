@@ -30,7 +30,7 @@
 
 .dishImage {
   text-align: center;
-  margin: 0 35%;
+  margin: 0 30%;
 }
 
 .ingStyle {
@@ -48,7 +48,7 @@ li {
   margin-bottom: 10px;
   font-family: "Ubuntu";
   font-style: normal;
-  font-weight: bold;
+  font-weight: 300;
   font-size: 15px;
 }
 
