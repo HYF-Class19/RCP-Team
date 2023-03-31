@@ -7,37 +7,69 @@ Here is all the design
 
 ## Homepage
 
-![homepage](./Assets/figma-homepage.png)
+<img src="./Assets/figma-homepage.png" width="600" />
+
 ![figma mobile](./Assets/figma-mobile.png)
-![homepage mobile](./Asset/../Assets/figma-mobile-homepage.png)
-![custom dropdown menu](./Assets/figma-mobile-dropdown.png)
-![custom pop-up filter](./Assets/figma-mobile-popupfilter.png)
 
-## Filter-page
 
-![filter](./Assets/figma-filterpage.png)
-![filter mobile](./Assets/figma-mobile-filterpage.png)
+<img src="./Asset/../Assets/figma-mobile-homepage.png" width="200" />
+<img src="./Assets/figma-mobile-dropdown.png" width="200" />
+<img src="./Assets/figma-mobile-popupfilter.png" width="200" />
+<br>
+<br>
+<br>
 
-## single recipe
+## Filter page
 
-![single recipe page prototype desktop](./Assets/one-recipe-proto-desktop.png)
-![single recipe page prototype mobile](.Assets/../Assets/one-recipe-proto-mobile.png)
-![single recipe page figma design](./Assets/one-recipe-figma.png)
+<img src="./Assets/figma-filterpage.png" width="600" />
+<img src="./Assets/figma-mobile-filterpage.png" width="200" />
+<br>
+<br>
+<br>
 
-## Contact Us
+## Single Recipe page
 
-![Contact us page](./Assets/figma-contact-page.png)
-![Contact us mobile ](./Assets/figma-mobile-contact-page.png)
+<img src="./Assets/one-recipe-figma.png" width="800" />
+<br>
+<br>
+<br>
 
-## User Account
+## Contact Us page
 
-![User account](./Assets/figma-userccount.png)
-![User account mobile full](./Assets/figma-mobile-2.png)
-![User account mobile](./Assets/figma-mobile-useraccount.png)
-![User account registration pop-up](./Assets/figma-mobile-registrationpopup.png)
-![User account login pop-up](./Assets/figma-mobile-loginpopup.png)
+<img src="./Assets/figma-contact-page.png" width="600" />
+<img src="./Assets/figma-mobile-contact-page.png" width="200" />
+<br>
+<br>
+<br>
 
-## Add Recipe
+## User Account page
 
-![Add recipe page](./Assets/figma-add-recipe.png)
-![Add recipe mobile](./Assets/figma-mobile-add-recipe.png)
+<img src="./Assets/figma-userccount.png" width="600" />
+<img src="./Assets/figma-mobile-2.png" width="700" />
+<br>
+<br>
+<br>
+
+
+## Add Recipe page
+
+<img src="./Assets/figma-add-recipe.png" width="600" />
+<img src="./Assets/figma-mobile-add-recipe.png" width="200" />
+<br>
+<br>
+<br>
+
+## About Us page
+<img src="./Assets/about-us.png" width="800" />
+<br>
+<br>
+<br>
+
+## Favorite Recipes page
+<img src="./Assets/favorite.png" width="800" />
+<br>
+<br>
+<br>
+
+## Terms Of Use page 
+<img src="./Assets/terms-of-use.png" width="800" />
