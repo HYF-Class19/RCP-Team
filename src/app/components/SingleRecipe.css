@@ -1,0 +1,74 @@
+.singleRecipe {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.fontStyle {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 46px;
+  text-align: center;
+}
+
+.dishName {
+  margin-top: 100px;
+}
+
+.ingredientName {
+  margin-bottom: 30px;
+}
+
+.dishInfo {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: center;
+  gap: 100px;
+}
+
+.dishImage {
+  text-align: center;
+  margin: 0 35%;
+}
+
+.ingStyle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 30px 30%;
+  column-gap: 2rem;
+}
+
+.insStyle {
+  margin: 30px 30%;
+}
+
+li {
+  margin-bottom: 10px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .ingStyle {
+    display: block;
+  }
+  .dishImage {
+    height: 300px;
+    width: 300px;
+    margin: 0 10%;
+  }
+  .dishInfo {
+    display: block;
+    margin: 50px 30%;
+  }
+  .ingStyle {
+    margin: 30px 10%;
+  }
+  .insStyle {
+    margin: 30px 10%;
+  }
+}
