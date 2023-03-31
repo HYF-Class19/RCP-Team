@@ -15,9 +15,9 @@ export default function Home() {
     <>
       <Header />
       <NavBar />
-      <SlideShow />
-      <SingleRecipe dishId={716429} />
-      <Filter />
+      {/* <SlideShow /> */}
+      <SingleRecipe dishId={324694} />
+      {/* <Filter /> */}
       <Footer />
     </>
   );
