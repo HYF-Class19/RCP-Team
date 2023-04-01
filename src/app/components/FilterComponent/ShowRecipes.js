@@ -9,7 +9,7 @@ const diet = {};
 export const ShowRecipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [url, setUrl] = useState(
-    `https://api.spoonacular.com/recipes/complexSearch?cuisine=french,american,chinese,italian,african&number=5&diet=${diet}&apiKey=YourApiKey`
+    `https://api.spoonacular.com/recipes/complexSearch?cuisine=french,american,chinese,italian,african&number=5&diet=${diet}&apiKey=dd5c172973c04526bd48a30d4926cafb`
   );
   const [loading, setLoading] = useState(true);
 
@@ -31,7 +31,7 @@ export const ShowRecipes = () => {
   const getRecipeInformation = async (response) => {
     response.map(async (item) => {
       const recipe = await fetch(
-        `https://api.spoonacular.com/recipes/${item.id}/information?apiKey=yourApiKey`
+        `https://api.spoonacular.com/recipes/${item.id}/information?apiKey=dd5c172973c04526bd48a30d4926cafb`
       );
 
       const recipeData = await recipe.json();
