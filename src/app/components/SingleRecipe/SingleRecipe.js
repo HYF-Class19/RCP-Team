@@ -3,16 +3,16 @@
 import React, { useState, useEffect } from "react";
 import "./SingleRecipe.css";
 import Image from "next/image";
-import rating from "../../../public/assets/rating.jpeg";
-import alarm from "../../../public/assets/alarm.jpeg";
-import people from "../../../public/assets/people.jpeg";
+import rating from "../../../../public/assets/rating.jpeg";
+import alarm from "../../../../public/assets/alarm.jpeg";
+import people from "../../../../public/assets/people.jpeg";
 
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
 
   const fetchRecipe = async () => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/${props.dishId}/information?includeNutrition=true&apiKey=yourApiKey`
+      `https://api.spoonacular.com/recipes/${props.dishId}/information?includeNutrition=true&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
     );
     const recipeInfo = await response.json();
     console.log(recipeInfo);
