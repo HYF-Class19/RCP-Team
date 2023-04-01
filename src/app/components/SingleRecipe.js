@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from "react";
 import "./SingleRecipe.css";
 import Image from "next/image";
-import rating from "../../image/rating.jpeg";
-import alarm from "../../image/alarm.jpeg";
-import people from "../../image/people.jpeg";
-import { classNames } from "primereact/utils";
+import rating from "../../../public/assets/rating.jpeg";
+import alarm from "../../../public/assets/alarm.jpeg";
+import people from "../../../public/assets/people.jpeg";
 
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
