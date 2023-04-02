@@ -6,45 +6,84 @@ import { Paginate } from './Paginate';
 // example for the complex filter for the future
 const diet = {};
 
-export const ShowRecipes = () => {
+export const ShowRecipes = ({
+  ingredientsData,
+  excludeIngredientsData,
+  dietsData,
+  menuOriginData,
+}) => {
   const [recipes, setRecipes] = useState([]);
-  const [url, setUrl] = useState(
-    `https://api.spoonacular.com/recipes/complexSearch?cuisine=french,american,chinese,italian,african&number=5&diet=${diet}&apiKey=YourApiKey`
-  );
+  let url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&cuisine=chinese&number=36&diet=${diet}`;
+
+  if (menuOriginData) {
+    console.log('we have a menu now');
+    console.log(menuOriginData.menus);
+    url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&cuisine=${menuOriginData.menus.join()}&includeIngredients=${ingredientsData.join()}&excludeIngredients=${excludeIngredientsData.join()}`;
+  }
+
   const [loading, setLoading] = useState(true);
 
   // HANDLE PAGINATION
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
 
-  // FETCH INITIAL RECIPE RESULTS WILL BE RECIPES WITH A SPECIFIC ID
-  const fetchRecipes = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    const dataResults = data.results;
-    console.log(dataResults);
-    getRecipeInformation(dataResults);
-    setLoading(false);
-  };
-
-  // GET RECIPE INFORMATION BASED ON THE ID
-  const getRecipeInformation = async (response) => {
-    response.map(async (item) => {
-      const recipe = await fetch(
-        `https://api.spoonacular.com/recipes/${item.id}/information?apiKey=yourApiKey`
-      );
-
-      const recipeData = await recipe.json();
-      setRecipes((state) => {
-        state = [...state, recipeData];
-        console.log('STATE', state);
-        return state;
-      });
-    });
-  };
-
   useEffect(() => {
-    fetchRecipes();
+    console.log(url);
+    // API HEADER OPTIONS
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': 'b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b',
+        'X-RapidAPI-Host':
+          'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+      },
+    };
+
+    // FETCH INITIAL RECIPE RESULTS WILL BE RECIPES WITH A SPECIFIC ID
+    const fetchRecipes = async (url) => {
+      let detailedRecipes = [];
+      let localData = window.localStorage.getItem(url);
+
+      if (localData) {
+        localData = JSON.parse(localData);
+      }
+
+      if (
+        localData &&
+        localData.recipes &&
+        Date.now() - localData.time < 60000
+      ) {
+        detailedRecipes = localData.recipes;
+      }
+
+      if (detailedRecipes.length === 0) {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        detailedRecipes = data.results;
+
+        //console.log(dataResults);
+        //detailedRecipes = await getRecipeInformation(dataResults);
+        //console.log(detailedRecipes);
+
+        //console.log('fetched recipes');
+
+        window.localStorage.setItem(
+          url,
+          JSON.stringify({
+            recipes: detailedRecipes,
+            time: Date.now(),
+          })
+        );
+      }
+
+      //console.log('set recpices');
+      //console.log(detailedRecipes);
+
+      setRecipes(detailedRecipes);
+      setLoading(false);
+    };
+
+    fetchRecipes(url);
   }, [url]);
 
   // HANDLE PAGINATION
