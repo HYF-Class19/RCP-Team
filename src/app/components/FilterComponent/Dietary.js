@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Dietary.css';
 
-export const Dietary = () => {
+export const Dietary = ({ callbackDiets }) => {
+  const [dietsInfo, setDietsInfo] = useState({ diets: [] });
+
+  const handleChange = (e) => {
+    const { value, checked } = e.target;
+
+    const { diets } = dietsInfo;
+
+    if (checked) {
+      setDietsInfo({
+        diets: [...diets, value],
+      });
+    } else {
+      setDietsInfo({
+        diets: diets.filter((e) => e !== value),
+      });
+    }
+  };
+
+  callbackDiets(dietsInfo);
+
   return (
     <div className="dietary">
       <h2>Dietary</h2>
@@ -13,6 +33,7 @@ export const Dietary = () => {
             name="diets"
             value="vegetarian"
             className="checkbox"
+            onChange={handleChange}
           />
           <label for="vegetarian">Vegetarian</label>
         </div>
@@ -23,6 +44,7 @@ export const Dietary = () => {
             name="diets"
             value="vegan"
             className="checkbox"
+            onChange={handleChange}
           />
           <label for="vegan">Vegan</label>
         </div>
@@ -33,6 +55,7 @@ export const Dietary = () => {
             name="diets"
             value="gluten-free"
             className="checkbox"
+            onChange={handleChange}
           />
           <label for="gluten-free">Gluten free</label>
         </div>
@@ -43,6 +66,7 @@ export const Dietary = () => {
             name="diets"
             value="ketogenic"
             className="checkbox"
+            onChange={handleChange}
           />
           <label for="ketogenic">Ketogenic</label>
         </div>
@@ -53,6 +77,7 @@ export const Dietary = () => {
             name="diets"
             value="paleo"
             className="checkbox"
+            onChange={handleChange}
           />
           <label for="paleo">Paleo</label>
         </div>
