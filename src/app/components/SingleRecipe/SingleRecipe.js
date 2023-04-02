@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 import "./SingleRecipe.css";
 import Image from "next/image";
-import rating from "../../../public/assets/rating.jpeg";
-import alarm from "../../../public/assets/alarm.jpeg";
-import people from "../../../public/assets/people.jpeg";
+import rating from "../../../../public/assets/rating.jpeg";
+import alarm from "../../../../public/assets/alarm.jpeg";
+import people from "../../../../public/assets/people.jpeg";
 
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
