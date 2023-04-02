@@ -7,7 +7,13 @@ import { IncludeIngredients } from './IncludeIngredients';
 import { MenuOrigin } from './MenuOrigin';
 import { Button } from 'primereact/button';
 
-export const Filter = () => {
+export const Filter = ({
+  getIngredientData,
+  excludedData,
+  getDietsData,
+  getMenuData,
+  setSearchNewRecipes,
+}) => {
   const [includeIngredients, setIncludeIngredients] = useState();
   const [excludedIngredients, setExcludeIngredients] = useState();
   const [selectedDiets, setSelectedDiets] = useState();
@@ -29,11 +35,14 @@ export const Filter = () => {
     setSelectedMenus(selectedMenu);
   };
 
+  // Share selected options with parent component
   const handleClick = () => {
-    console.log('includeIngredients', includeIngredients);
-    console.log('excludeIngredients', excludedIngredients);
-    console.log('selectedDiets', selectedDiets);
-    console.log('selectedMenus', selectedMenus);
+    setSearchNewRecipes(
+      includeIngredients,
+      excludedIngredients,
+      selectedDiets,
+      selectedMenus
+    );
   };
 
   return (
