@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './IncludeIngredients.css';
 
-export const IncludeIngredients = () => {
+export const IncludeIngredients = ({ callbackIngredients }) => {
   const [value, setValue] = useState('');
   const [ingredients, setIngredients] = useState([]);
 
@@ -19,8 +19,9 @@ export const IncludeIngredients = () => {
   const deleteIngredients = (index) => {
     const newIngredients = ingredients.filter((_, i) => i !== index);
     setIngredients(newIngredients);
-    console.log('setIngredients', newIngredients);
   };
+
+  callbackIngredients(ingredients);
 
   return (
     <div className="wrapper">

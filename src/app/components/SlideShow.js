@@ -7,12 +7,21 @@ import Link from "next/link";
 import styles from "./SlideShow.module.css";
 
 export const SlideShow = () => {
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b',
+      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+    },
+  };
+
   const [recipes, setRecipes] = useState([]);
   const [recipeID, setRecipeID] = useState([]);
 
   const fetchRecipes = async () => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/random?number=3&apiKey=yourApiKey`
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=3`,
+      options
     );
     const data = await response.json();
     setRecipes(data.recipes);

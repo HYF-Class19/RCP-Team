@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './ExcludeIngredients.css';
 
-export const ExcludeIngredients = () => {
+export const ExcludeIngredients = ({ callbackExcluded }) => {
   const [excludeValue, setExcludeValue] = useState('');
   const [excludeIngredients, setExcludeIngredients] = useState([]);
 
@@ -22,8 +22,9 @@ export const ExcludeIngredients = () => {
   const deleteIngredients = (index) => {
     const newIngredients = excludeIngredients.filter((_, i) => i !== index);
     setExcludeIngredients(newIngredients);
-    console.log('setIngredients', newIngredients);
   };
+
+  callbackExcluded(excludeIngredients);
 
   return (
     <div className="wrapper">
