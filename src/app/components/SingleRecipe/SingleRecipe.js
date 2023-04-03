@@ -6,7 +6,8 @@ import Image from "next/image";
 import rating from "../../../../public/assets/rating.jpeg";
 import alarm from "../../../../public/assets/alarm.jpeg";
 import people from "../../../../public/assets/people.jpeg";
-
+import noRating from "../../../../public/assets/no-rating.jpeg";
+import favorite from "../../../../public/assets/favorite.png";
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
 
@@ -34,7 +35,7 @@ export const SingleRecipe = (props) => {
   };
 
   const getInstructions = (recipe) => {
-    const instructions = recipe.analyzedInstructions[1].steps;
+    const instructions = recipe.analyzedInstructions[0].steps;
     let instruction = [];
     for (let i = 0; i < instructions.length; i++) {
       instruction.push(<li> {instructions[i].step}</li>);
@@ -72,6 +73,16 @@ export const SingleRecipe = (props) => {
         ) : (
           <p>No Instructions available...</p>
         )}
+        <div className="rateSection">
+          <div className="rating">
+            <p>Rate</p>
+            <Image src={noRating} alt="noRating" width={50} height={20} />
+          </div>
+          <div className="rating">
+            <p>Add to favorite</p>
+            <Image src={favorite} alt="favorite" width={50} height={20} />
+          </div>
+        </div>
       </div>
     );
   };
