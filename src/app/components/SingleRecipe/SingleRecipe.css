@@ -52,6 +52,20 @@ li {
   font-size: 15px;
 }
 
+.rateSection {
+  display: flex;
+  margin: 30px 30%;
+  gap: 40%;
+}
+.rating {
+  border: 1px solid;
+  padding: 2%;
+  background-color: #f0eccf;
+  display: flex;
+  gap: 10px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
   .ingStyle {
     display: block;
@@ -70,5 +84,11 @@ li {
   }
   .insStyle {
     margin: 30px 10%;
+  }
+  .rateSection {
+    display: block;
+  }
+  .rating {
+    margin-bottom: 20px;
   }
 }

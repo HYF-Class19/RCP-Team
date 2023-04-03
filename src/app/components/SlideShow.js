@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Carousel } from 'primereact/carousel';
-import { Button } from 'primereact/button';
-import { classNames } from 'primereact/utils';
-import Image from 'next/image';
-import styles from './SlideShow.module.css';
+import React, { useState, useEffect } from "react";
+import { Carousel } from "primereact/carousel";
+import { Button } from "primereact/button";
+import { classNames } from "primereact/utils";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./SlideShow.module.css";
 
 export const SlideShow = () => {
   const options = {
@@ -15,6 +16,7 @@ export const SlideShow = () => {
   };
 
   const [recipes, setRecipes] = useState([]);
+  const [recipeID, setRecipeID] = useState([]);
 
   const fetchRecipes = async () => {
     const response = await fetch(
@@ -30,15 +32,26 @@ export const SlideShow = () => {
   }, []);
 
   const itemTemplate = (recipe) => {
+    setRecipeID(`id=${recipe.id}`);
     return (
       <div className="flex align-content-center">
         <div className="flex-1 align-items-stretch">
           <h2 className="mb-1">{recipe.title}</h2>
           <Button
+            type="submit"
             label="Check Recipe"
             severity="secondary"
             icon="pi pi-search"
-          />
+          >
+            <Link
+              href={{
+                pathname: "/components/SingleRecipe",
+                query: recipeID,
+              }}
+            >
+              Check Recipe
+            </Link>
+          </Button>
         </div>
         <div className="flex-1 align-items-stretch">
           <Image
@@ -55,7 +68,7 @@ export const SlideShow = () => {
 
   return (
     <div className={styles.container}>
-      <div className={classNames('align-content-center', styles.slide)}>
+      <div className={classNames("align-content-center", styles.slide)}>
         {recipes?.length > 0 ? (
           <Carousel
             value={recipes}
