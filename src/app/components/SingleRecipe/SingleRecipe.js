@@ -13,7 +13,7 @@ export const SingleRecipe = (props) => {
 
   const fetchRecipe = async () => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/${props.dishId}/information?includeNutrition=true&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.spoonacular.com/recipes/${props.dishId}/information?includeNutrition=true&apiKey=yourApiKey`
     );
     const recipeInfo = await response.json();
     console.log(recipeInfo);
