@@ -3,21 +3,21 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import Image from "next/image";
-import pastries from "/public/assets/pastries.jpg";
-import "./ContactBox.css";
+import veggie from "/public/assets/veggie.jpg";
+import "./RecipeBox.css";
 
 
-export const ContactBox = () => {
+export const RecipeBox = () => {
     return (
        <div className="box">
        <ol className="breadcrumb">
                  <li className="breadcrumb-item"> <a href="../page.js"> 🏠Home </a></li>
-                 <li className="breadcrumb-item"> <a href="#"> Contact </a></li>
+                 <li className="breadcrumb-item"> <a href="#"> Add Recipe </a></li>
          </ol>
          <Image
           className="imgcontact"
-          src={pastries}
-          alt="pastries"
+          src={veggie}
+          alt="vegetables"
           />
         </div>
 
