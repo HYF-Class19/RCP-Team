@@ -11,9 +11,18 @@ import favorite from "../../../../public/assets/favorite.png";
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
 
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b",
+      "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+    },
+  };
+
   const fetchRecipe = async () => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/${props.dishId}/information?includeNutrition=true&apiKey=yourApiKey`
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${props.dishId}/information?includeNutrition=true`,
+      options
     );
     const recipeInfo = await response.json();
     console.log(recipeInfo);
