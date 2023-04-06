@@ -1,4 +1,5 @@
 import './NavBar.css';
+import Link from 'next/link';
 
 export const NavBar = () => {
   return (
@@ -72,7 +73,13 @@ export const NavBar = () => {
           <a href="#">Top Recipes</a>
         </li>
         <li>
-          <a href="#">Random Recipe</a>
+          <Link
+            href={{
+              pathname: '/components/RandomRecipe',
+            }}
+          >
+            Random Recipe
+          </Link>
         </li>
       </ul>
     </div>
