@@ -1,14 +1,15 @@
 "use client";
 import "./Footer.css";
 import { Button } from "primereact/button";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
     <div className="footer">
       <div className="flex gap-4 align-self-center buttons">
-        <a href="#">
+        <Link href="/about">
           <Button label="About Us" className="footerB" />
-        </a>
+        </Link>
 
         <a href="#">
           <Button label="Contact" className="footerB" />
