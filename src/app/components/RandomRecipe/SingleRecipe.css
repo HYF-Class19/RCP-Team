@@ -1,10 +1,10 @@
 .singleRecipe {
   background-color: #ffffff;
-  border: 1px solid #000000;
+  border: none;
 }
 
 .fontStyle {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -46,7 +46,7 @@
 
 li {
   margin-bottom: 10px;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 300;
   font-size: 15px;
