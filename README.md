@@ -56,7 +56,7 @@ In the coming weeks the rest will be added.
 ## some Screenshots
 
 ![logo](public/assets/design/../RCP-logo.jpg)
-<img src="public/assets/logo2.png" width="350" />
+<img src="public/assets/logo.png" width="350" />
 
 ## npm Library used
 
