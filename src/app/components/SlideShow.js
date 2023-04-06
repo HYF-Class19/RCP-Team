@@ -8,10 +8,10 @@ import styles from "./SlideShow.module.css";
 
 export const SlideShow = () => {
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'X-RapidAPI-Key': 'b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b',
-      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+      "X-RapidAPI-Key": "b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b",
+      "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
     },
   };
 
@@ -34,15 +34,10 @@ export const SlideShow = () => {
   const itemTemplate = (recipe) => {
     setRecipeID(`id=${recipe.id}`);
     return (
-      <div className="flex align-content-center">
-        <div className="flex-1 align-items-stretch">
-          <h2 className="mb-1">{recipe.title}</h2>
-          <Button
-            type="submit"
-            label="Check Recipe"
-            severity="secondary"
-            icon="pi pi-search"
-          >
+      <div className={styles.randomRecipe}>
+        <div>
+          <h2 className={styles.recipeName}>{recipe.title}</h2>
+          <Button type="submit" className={styles.recipeButton}>
             <Link
               href={{
                 pathname: "/components/SingleRecipe",
@@ -53,15 +48,14 @@ export const SlideShow = () => {
             </Link>
           </Button>
         </div>
-        <div className="flex-1 align-items-stretch">
-          <Image
-            className="w-8 shadow-2"
-            src={recipe.image}
-            alt={recipe.title}
-            width={525}
-            height={350}
-          />
-        </div>
+
+        <Image
+          className="styles.recipeImage"
+          src={recipe.image}
+          alt={recipe.title}
+          width={500}
+          height={300}
+        />
       </div>
     );
   };
@@ -76,7 +70,7 @@ export const SlideShow = () => {
             numVisible={1}
             numScroll={1}
             circular
-            autoplayInterval={3000}
+            autoplayInterval={5000}
           />
         ) : (
           <p>Loading...</p>
