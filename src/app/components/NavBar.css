@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .navbar {
   background-color: #24503d;
   height: 75px;
@@ -12,14 +16,18 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  height: 100%;
 }
 
 .parentList li {
   position: relative;
   float: left;
+  z-index: 100;
+  list-style: none;
 }
 
 .parentList li a {
+  margin: 0;
   text-decoration: none;
   display: block;
   font-size: 30px;
@@ -27,6 +35,7 @@
   line-height: 34.47px;
   color: white;
   padding: 20px 10px 20px;
+  height: 75px;
 }
 
 .parentList li a:hover {

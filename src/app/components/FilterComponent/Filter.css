@@ -42,3 +42,7 @@
   font-size: 24px;
   margin-left: 254px;
 }
+
+.filter .btn-filter:hover {
+  background-color: #e7b10a;
+}
