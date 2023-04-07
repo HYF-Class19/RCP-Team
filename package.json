@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firebase/app": "^0.9.7",
+    "@firebase/auth": "^0.22.0",
+    "@firebase/firestore": "^3.10.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "firebase": "^9.19.1",
