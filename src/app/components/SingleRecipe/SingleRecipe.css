@@ -1,6 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap");
+
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 30px;
+  font-weight: lighter;
+  padding: 50px 118px;
+}
+
+h2 a {
+  font-weight: bold;
+}
+
 .singleRecipe {
   background-color: #ffffff;
-  border: 1px solid #000000;
+  border: none;
 }
 
 .fontStyle {

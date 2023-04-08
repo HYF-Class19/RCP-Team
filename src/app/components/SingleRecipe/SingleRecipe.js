@@ -8,6 +8,8 @@ import alarm from "../../../../public/assets/alarm.jpeg";
 import people from "../../../../public/assets/people.jpeg";
 import noRating from "../../../../public/assets/no-rating.jpeg";
 import favorite from "../../../../public/assets/favorite.png";
+import Link from "next/link";
+
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
 
@@ -54,45 +56,52 @@ export const SingleRecipe = (props) => {
 
   const displayRecipe = (recipe) => {
     return (
-      <div className="singleRecipe">
-        <p className="dishName fontStyle">{recipe.title}</p>
-        <div className="dishInfo">
-          <Image src={rating} alt="rating" width={80} height={50} />
-          <div className="flex gap-3 align-items-center">
-            <Image src={alarm} alt="time" width={40} height={40} />
-            <p>{recipe.readyInMinutes} min</p>
+      <>
+        <div>
+          <h2>
+            <Link href="#">HOME</Link> {">"} Dish Recipe
+          </h2>
+        </div>
+        <div className="singleRecipe">
+          <p className="dishName fontStyle">{recipe.title}</p>
+          <div className="dishInfo">
+            <Image src={rating} alt="rating" width={80} height={50} />
+            <div className="flex gap-3 align-items-center">
+              <Image src={alarm} alt="time" width={40} height={40} />
+              <p>{recipe.readyInMinutes} min</p>
+            </div>
+            <div className="flex gap-3 align-items-center">
+              <Image src={people} alt="people" width={40} height={40} />
+              <p>{recipe.servings} persons</p>
+            </div>
           </div>
-          <div className="flex gap-3 align-items-center">
-            <Image src={people} alt="people" width={40} height={40} />
-            <p>{recipe.servings} persons</p>
+          <Image
+            className="dishImage"
+            src={recipe.image}
+            alt="Dish pic"
+            width={500}
+            height={300}
+          />
+          <p className="fontStyle">Ingredients</p>
+          <div>{getIngredients(recipe)} </div>
+          <p className="fontStyle">Instructions</p>
+          {recipe.analyzedInstructions ? (
+            <div>{getInstructions(recipe)} </div>
+          ) : (
+            <p>No Instructions available...</p>
+          )}
+          <div className="rateSection">
+            <div className="rating">
+              <p>Rate</p>
+              <Image src={noRating} alt="noRating" width={50} height={20} />
+            </div>
+            <div className="rating">
+              <p>Add to favorite</p>
+              <Image src={favorite} alt="favorite" width={50} height={20} />
+            </div>
           </div>
         </div>
-        <Image
-          className="dishImage"
-          src={recipe.image}
-          alt="Dish pic"
-          width={500}
-          height={300}
-        />
-        <p className="fontStyle">Ingredients</p>
-        <div>{getIngredients(recipe)} </div>
-        <p className="fontStyle">Instructions</p>
-        {recipe.analyzedInstructions ? (
-          <div>{getInstructions(recipe)} </div>
-        ) : (
-          <p>No Instructions available...</p>
-        )}
-        <div className="rateSection">
-          <div className="rating">
-            <p>Rate</p>
-            <Image src={noRating} alt="noRating" width={50} height={20} />
-          </div>
-          <div className="rating">
-            <p>Add to favorite</p>
-            <Image src={favorite} alt="favorite" width={50} height={20} />
-          </div>
-        </div>
-      </div>
+      </>
     );
   };
 
