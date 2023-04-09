@@ -5,14 +5,14 @@ import 'primeflex/primeflex.css';
 import Image from "next/image";
 import pastries from "/public/assets/pastries.jpg";
 import "./ContactBox.css";
+import Link from "next/link";
 
 
 export const ContactBox = () => {
     return (
        <div className="box">
        <ol className="breadcrumb">
-                 <li className="breadcrumb-item"> <a href="../page.js"> 🏠Home </a></li>
-                 <li className="breadcrumb-item"> <a href="#"> Contact </a></li>
+                 <li className="breadcrumb-item"> <Link href="#">HOME</Link> {">"} Contact </li>
          </ol>
          <Image
           className="imgcontact"
