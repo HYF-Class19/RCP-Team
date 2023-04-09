@@ -1,5 +1,7 @@
-import './Header.css';
 import Image from 'next/image';
+import Link from 'next/link';
+
+import './Header.css';
 import logo from '../../../public/assets/logo.png';
 
 export const Header = () => {
@@ -15,16 +17,19 @@ export const Header = () => {
           ></i>
           <p>Add recipe</p>
         </button>
-        <button className="sign-in">
-          <i
-            className="pi pi-user"
-            style={{ color: 'black', fontSize: '25px' }}
-          ></i>
-          <i
-            className="pi pi-heart-fill"
-            style={{ color: 'black', fontSize: '25px' }}
-          ></i>
-        </button>
+        <Link href="/account">
+          <button className="sign-in">
+            <i
+              className="pi pi-user"
+              style={{ color: 'black', fontSize: '25px' }}
+            ></i>
+            <i
+              className="pi pi-heart-fill"
+              style={{ color: 'black', fontSize: '25px' }}
+            ></i>
+          </button>
+        </Link>
+
       </div>
     </div>
   );
