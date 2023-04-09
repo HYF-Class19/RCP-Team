@@ -23,7 +23,7 @@
     max-width: 26%;
     height: 700px;
     line-height: 160%;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 200;
     margin: 5%;
   }
@@ -33,7 +33,7 @@
     max-width: 100%;
     height: 700px;
     line-height: 160%;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 100;
     margin: 5%;
 }
@@ -63,6 +63,7 @@
         border: none;
         background: #D9D9D9;
         border-radius: 4px;
+        font-size: 17px;
       }
       
       input[type=text]:focus, input[type=name]:focus {
@@ -79,12 +80,13 @@
         border: none;
         background: #D9D9D9;
         border-radius: 4px;
+        font-size: 17px;
         }
 
         input[type=query]:focus {
             background-color: #edd794;
             outline: none;
-          }
+        }
 
 
       .submitbtn {
@@ -104,6 +106,21 @@
         opacity: 1;
         background-color: #e7b10a;
       }
+
+      .errorMsg {
+        color: #f21e08;
+        font-size: 17px;
+        font-weight: 300;
+      }
+
+      .success-msg {
+        color: #24503D;
+        font-size: 27px;
+        font-weight: 500;
+        background-color: rgba(230, 243, 243, 0.562);
+  
+      }
+
 
 
       @media only screen and (max-width: 600px) {

@@ -11,7 +11,7 @@ export const Footer = () => {
           <Button label="About Us" className="footerB" />
         </Link>
 
-        <a href="#">
+        <a href="/contact">
           <Button label="Contact" className="footerB" />
         </a>
         <a href="/terms">
