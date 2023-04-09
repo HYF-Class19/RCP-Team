@@ -1,7 +1,5 @@
-import React from 'react';
 import Image from 'next/image';
 import recipeImage from '../../../../public/assets/food2.jpg';
-import 'primeicons/primeicons.css';
 import './RecipeCard.css';
 import { v4 as uuidv4 } from 'uuid';
 

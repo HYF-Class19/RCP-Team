@@ -1,7 +1,4 @@
 'use client';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
 import Image from "next/image";
 import veggie from "/public/assets/veggie.jpg";
 import "./RecipeBox.css";

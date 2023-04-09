@@ -3,15 +3,11 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 
 
 import { InputText } from "primereact/inputtext";
-import { Password } from "primereact/password";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import { classNames } from "primereact/utils";
-import "primeflex/primeflex.css";
 import styles from "./Account.module.css";
-
-
 
 import { auth, db } from "../services/Firebase";
 
