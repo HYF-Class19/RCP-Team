@@ -79,7 +79,7 @@ export const Login = () => {
             checked={rememberMe}
             onChange={(e) => setRememberMe(e.checked)}
           />
-          <label htmlFor="rememberMe" className="p3">Remember Me</label>
+          <label htmlFor="rememberMe" className="p3"> Remember Me</label>
         </div>
         <Button type="submit" label="Login" className={classNames("w-full p-2 border-1 border-solid border-round-md flex  hover:border-200", styles.registerBtn)} />
         <Button type="submit" label="Forgot your password?" className={classNames("w-full p-2 border-1 border-solid border-round-md flex  hover:border-200 mt-6", styles.forgetBtn)}/>
