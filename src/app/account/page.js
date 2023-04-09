@@ -1,6 +1,6 @@
 'use client';
-import { Splitter, SplitterPanel } from 'primereact/splitter';
 
+import "primereact/resources/themes/saga-green/theme.css";     
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
