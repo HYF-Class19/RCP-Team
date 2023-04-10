@@ -1,16 +1,13 @@
 import React, { useState, useRef } from 'react';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 
 import { InputText } from "primereact/inputtext";
-import { Password } from "primereact/password";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import { classNames } from "primereact/utils";
-import "primeflex/primeflex.css";
 import styles from "./Account.module.css";
-
-
 
 import { auth, db } from "../services/Firebase";
 
@@ -127,7 +124,7 @@ export const Join = () => {
             checked={agree}
             onChange={(e) => setAgree(e.checked)}
           />
-          <label htmlFor="agree">Yes, I agree to store my data in this website</label>
+          <label htmlFor="agree"> Yes, I agree to store my data in this website</label>
         </div>
         <Button type="submit" label="Register" className={classNames("w-full p-2 border-1 border-solid border-round-md flex  hover:border-200", styles.registerBtn)}/>
       </form>

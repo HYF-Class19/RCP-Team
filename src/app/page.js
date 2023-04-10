@@ -1,16 +1,14 @@
 'use client';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
+import { useState } from 'react';
+
+// css import 
 import './page.css';
 
-import { Header } from './components/Header';
-import { NavBar } from './components/NavBar';
+// components import
 import { SlideShow } from './components/SlideShow';
-import { Footer } from './components/Footer';
 import { Filter } from './components/FilterComponent/Filter';
 import { ShowRecipes } from './components/FilterComponent/ShowRecipes';
-import { useState } from 'react';
+
 
 export default function Home() {
   const [ingredientsData, setIngredientsData] = useState();
@@ -38,8 +36,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      <NavBar />
+
       <SlideShow />
       <div className="filter-showcase">
         <Filter setSearchNewRecipes={setSearchNewRecipes} />
@@ -50,7 +47,7 @@ export default function Home() {
           menuOriginData={menuOriginData}
         />
       </div>
-      <Footer />
+
     </>
   );
 }

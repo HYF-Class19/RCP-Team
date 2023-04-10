@@ -1,7 +1,5 @@
 'use client';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
+
 import Image from "next/image";
 import pastries from "/public/assets/pastries.jpg";
 import "./ContactBox.css";

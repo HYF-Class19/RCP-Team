@@ -1,4 +1,3 @@
-import React from 'react';
 import './Paginate.css';
 
 export const Paginate = ({
