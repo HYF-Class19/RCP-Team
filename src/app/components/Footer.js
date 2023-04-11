@@ -14,9 +14,9 @@ export const Footer = () => {
         <a href="/contact">
           <Button label="Contact" className="footerB" />
         </a>
-        <a href="/terms">
+        <Link href="/terms">
           <Button label="Terms Of Use" className="footerB" />
-        </a>
+        </Link>
       </div>
       <div className="align-content-end  flex gap-4 align-self-center icons">
         <a href="https://fr-fr.facebook.com/">
