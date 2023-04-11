@@ -7,7 +7,14 @@ import logo from '../../../public/assets/logo.png';
 export const Header = () => {
   return (
     <div className="header">
-      <Image src={logo} alt="logo" width={202} />
+      <Link
+        href={{
+          pathname: '../',
+        }}
+      >
+        <Image src={logo} alt="logo" width={202} />
+      </Link>
+
       <h1>I want to choose a recipe by...</h1>
       <div className="btn-group">
         <button className="add-recipe">
@@ -29,7 +36,6 @@ export const Header = () => {
             ></i>
           </button>
         </Link>
-
       </div>
     </div>
   );

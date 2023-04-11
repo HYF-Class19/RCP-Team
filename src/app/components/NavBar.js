@@ -12,8 +12,21 @@ export const NavBar = () => {
 
       <ul className="parentList">
         <li>
+          <Link
+            href={{
+              pathname: '../',
+            }}
+          >
+            <i
+              className="pi pi-home"
+              style={{ color: 'white', fontSize: '1.5rem' }}
+            ></i>{' '}
+            Home
+          </Link>
+        </li>
+        <li>
           <a href="#">
-            Kitchen{' '}
+            Menu Origin{' '}
             <i className="pi pi-angle-down" style={{ color: 'white' }}></i>
           </a>
           <ul>

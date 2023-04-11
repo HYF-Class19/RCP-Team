@@ -24,7 +24,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
 
   return (
     <div className="menu-origin">
-      <h2>MENU ORIGIN</h2>
+      <h2>Menu Origin</h2>
       <div className="select-origin">
         <div>
           <input
