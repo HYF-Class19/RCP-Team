@@ -161,3 +161,5 @@ We do not review or monitor any websites, advertisements, or other media linked 
        </React.Fragment>
     );
 };
+
+export default TermsOfUse;
