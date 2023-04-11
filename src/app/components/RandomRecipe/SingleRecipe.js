@@ -74,7 +74,7 @@ export const SingleRecipe = () => {
       <>
         <div>
           <h2>
-            <Link href="#">HOME</Link> {'>'} Random Recipe
+            <Link href="../">HOME</Link> {'>'} Random Recipe
           </h2>
         </div>
         <div className="singleRecipe">

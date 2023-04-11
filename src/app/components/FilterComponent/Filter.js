@@ -49,7 +49,7 @@ export const Filter = ({
     <div className="filter">
       <div className="filter-titles">
         <h1>Filter my recipe...</h1>
-        <h2>INGREDIENT</h2>
+        <h2>Ingredients</h2>
       </div>
       <div className="select-ingredients">
         <IncludeIngredients callbackIngredients={getIngredients} />

@@ -13,12 +13,12 @@ export const ShowRecipes = ({
   menuOriginData,
 }) => {
   const [recipes, setRecipes] = useState([]);
-  let url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&cuisine=chinese&number=36&diet=${diet}`;
+  let url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&cuisine=chinese&number=45&diet=${diet}`;
 
   if (menuOriginData) {
     console.log('we have a menu now');
     console.log(menuOriginData.menus);
-    url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&cuisine=${menuOriginData.menus.join()}&includeIngredients=${ingredientsData.join()}&excludeIngredients=${excludeIngredientsData.join()}`;
+    url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&&diet=${dietsData.diets.join()}&cuisine=${menuOriginData.menus.join()}&includeIngredients=${ingredientsData.join()}&excludeIngredients=${excludeIngredientsData.join()}&number=45`;
   }
 
   const [loading, setLoading] = useState(true);
