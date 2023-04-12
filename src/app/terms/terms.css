@@ -26,5 +26,8 @@ h2 a {
 }
 
 p {
-    padding: 90px;
+    padding: 50px 118px;
+    font-size: 18px;
+    line-height: 2em;
+    margin-bottom: 50px;
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 import React, { useState, useEffect } from 'react';
-import './SingleRecipe.css';
+import '../SingleRecipe/SingleRecipe.css';
 import Image from 'next/image';
 import rating from '../../../../public/assets/rating.jpeg';
 import alarm from '../../../../public/assets/alarm.jpeg';
@@ -74,7 +74,7 @@ export const SingleRecipe = () => {
       <>
         <div>
           <h2>
-            <Link href="../">HOME</Link> {'>'} Random Recipe
+            <Link href="../">Home</Link> {'>'} Random Recipe
           </h2>
         </div>
         <div className="singleRecipe">
@@ -126,5 +126,3 @@ export const SingleRecipe = () => {
     </div>
   );
 };
-
-export default SingleRecipe;

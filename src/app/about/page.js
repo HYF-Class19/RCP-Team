@@ -1,10 +1,4 @@
-"use client";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
-import "primeflex/primeflex.css";
-import "../page.css";
-
-import { AboutUs } from "../components/about/about";
+import { AboutUs } from "./about";
 
 export default function Home() {
   return (
