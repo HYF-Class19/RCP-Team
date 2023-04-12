@@ -5,12 +5,11 @@ import pastries from "/public/assets/pastries.jpg";
 import "./ContactBox.css";
 import Link from "next/link";
 
-
 export const ContactBox = () => {
     return (
        <div className="box">
        <ol className="breadcrumb">
-                 <li className="breadcrumb-item"> <Link href="#">HOME</Link> {">"} Contact </li>
+                 <li className="breadcrumb-item"> <Link href="#">Home</Link> {">"} Contact </li>
          </ol>
          <Image
           className="imgcontact"

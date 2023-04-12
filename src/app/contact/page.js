@@ -1,8 +1,7 @@
 'use client';
 
-import { ContactBox } from '../components/ContactPage/ContactBox';
-import { ContactForm } from '../components/ContactPage/ContactForm';
-
+import { ContactBox } from './ContactBox';
+import { ContactForm } from './ContactForm';
 
 export default function Home() {
   return (

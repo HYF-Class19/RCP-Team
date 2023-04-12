@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from "react";
-// import { useForm } from "react-hook-form";
+import { useState } from 'react';
+import { useForm } from "react-hook-form";
 import "./ContactForm.css";
 
 export const ContactForm = () => {
@@ -20,7 +20,7 @@ export const ContactForm = () => {
     };
   
     return (
-        <React.Fragment>
+        <>
             <section className="box">
                 <div className="row">
             <div className="column-one">
@@ -45,8 +45,6 @@ export const ContactForm = () => {
               <p className="errorMsg">{errors.name.message}</p>
             )}
           
-  
-         
             <label>Email</label>
             <input
               type="name" placeholder="Enter your email address" name="email" id="email"
@@ -59,8 +57,7 @@ export const ContactForm = () => {
               })}
             />
             {errors.email && <p className="errorMsg">{errors.email.message}</p>}
-         
-          
+
             <label>Message</label>
             <input type="query" placeholder="Type your message here" name="message" id="message"
               {...register("message", {
@@ -88,8 +85,6 @@ export const ContactForm = () => {
 
         </div>
     </section>
-    </React.Fragment>
+    </>
    );
 };
-
-export default ContactForm;
