@@ -35,7 +35,7 @@ export const SlideShow = () => {
     setRecipeID(`id=${recipe.id}`);
     return (
       <div className={styles.randomRecipe}>
-        <div>
+        <div className={styles.recipeDetail}>
           <h2 className={styles.recipeName}>{recipe.title}</h2>
           <Button type="submit" className={styles.recipeButton}>
             <Link
