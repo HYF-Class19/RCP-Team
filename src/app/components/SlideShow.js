@@ -69,6 +69,7 @@ export const SlideShow = () => {
             itemTemplate={itemTemplate}
             numVisible={1}
             numScroll={1}
+            className="carouselStyle"
             circular
             autoplayInterval={5000}
           />
