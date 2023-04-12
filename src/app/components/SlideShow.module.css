@@ -21,7 +21,12 @@
   font-weight: 700;
   font-family: "Ubuntu";
   text-align: center;
+  padding: 0;
 }
+
+/* .carouselStyle {
+  background-color: black;
+} */
 
 .randomRecipe {
   display: flex;
