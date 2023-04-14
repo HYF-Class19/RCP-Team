@@ -188,3 +188,4 @@ export const NavBar = ({ getDietsData, setSearchNewRecipes, callbackDiets }) => 
 //   .then(response => console.log(response))
 //   .catch(err => console.error(err));
 // }
+//
