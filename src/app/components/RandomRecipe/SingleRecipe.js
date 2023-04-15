@@ -6,13 +6,16 @@ import Image from 'next/image';
 import rating from '../../../../public/assets/rating.jpeg';
 import alarm from '../../../../public/assets/alarm.jpeg';
 import people from '../../../../public/assets/people.jpeg';
-import noRating from '../../../../public/assets/no-rating.jpeg';
-import favorite from '../../../../public/assets/favorite.png';
 import Link from 'next/link';
+// Save favorite recipes
 
 export const SingleRecipe = () => {
   const [recipe, setRecipes] = useState([]);
   const [recipeId, setRecipeID] = useState();
+  const [recipeTitle, setRecipeTitle] = useState();
+  const [recipeTime, setRecipeTime] = useState();
+  const [recipeServings, setRecipeServings] = useState();
+  const [recipeImage, setRecipeImage] = useState();
 
   const options = {
     method: 'GET',
@@ -40,7 +43,6 @@ export const SingleRecipe = () => {
       options
     );
     const recipeInfo = await response.json();
-    //console.log(recipeInfo);
     setRecipes(recipeInfo);
   };
 
@@ -49,6 +51,18 @@ export const SingleRecipe = () => {
   useEffect(() => {
     fetchRecipeID();
   }, []);
+
+  const saveFavorite = (recipe) => {
+    setRecipeTitle(recipe.title),
+      setRecipeServings(Number(recipe.servings)),
+      setRecipeTime(recipe.readyInMinutes),
+      setRecipeImage(recipe.image);
+    console.log(recipe.id);
+    console.log('title:', recipeTitle),
+      console.log('servings:', recipeServings),
+      console.log('time:', recipeTime);
+    console.log('image', recipeImage);
+  };
 
   const getIngredients = (recipe) => {
     const ingredients = recipe.extendedIngredients;
@@ -108,11 +122,19 @@ export const SingleRecipe = () => {
           <div className="rateSection">
             <div className="rating">
               <p>Rate</p>
-              <Image src={noRating} alt="noRating" width={50} height={20} />
+              <div className="stars">
+                <i className="pi pi-star-fill"></i>
+                <i className="pi pi-star-fill"></i>
+                <i className="pi pi-star-fill"></i>
+                <i className="pi pi-star-fill"></i>
+                <i className="pi pi-star-fill"></i>
+              </div>
             </div>
-            <div className="rating">
+            <div className="rating" onClick={() => saveFavorite(recipe)}>
               <p>Add to favorite</p>
-              <Image src={favorite} alt="favorite" width={50} height={20} />
+              <div className="heart">
+                <i className="pi pi-heart-fill"></i>
+              </div>
             </div>
           </div>
         </div>

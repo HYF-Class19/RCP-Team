@@ -1,23 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-import React, { useState, useEffect } from "react";
-import "./SingleRecipe.css";
-import Image from "next/image";
-import rating from "../../../../public/assets/rating.jpeg";
-import alarm from "../../../../public/assets/alarm.jpeg";
-import people from "../../../../public/assets/people.jpeg";
-import noRating from "../../../../public/assets/no-rating.jpeg";
-import favorite from "../../../../public/assets/favorite.png";
-import Link from "next/link";
+'use client';
+import React, { useState, useEffect } from 'react';
+import './SingleRecipe.css';
+import Image from 'next/image';
+import rating from '../../../../public/assets/rating.jpeg';
+import alarm from '../../../../public/assets/alarm.jpeg';
+import people from '../../../../public/assets/people.jpeg';
+import Link from 'next/link';
+import 'primeicons/primeicons.css';
 
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
 
   const options = {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "X-RapidAPI-Key": "b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b",
-      "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+      'X-RapidAPI-Key': 'b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b',
+      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
     },
   };
 
@@ -59,7 +58,7 @@ export const SingleRecipe = (props) => {
       <>
         <div>
           <h2>
-            <Link href="#">HOME</Link> {">"} Dish Recipe
+            <Link href="#">HOME</Link> {'>'} Dish Recipe
           </h2>
         </div>
         <div className="singleRecipe">
@@ -93,11 +92,19 @@ export const SingleRecipe = (props) => {
           <div className="rateSection">
             <div className="rating">
               <p>Rate</p>
-              <Image src={noRating} alt="noRating" width={50} height={20} />
+              <div className="stars">
+                <i className="pi pi-star-fill"></i>
+                <i className="pi pi-star-fill"></i>
+                <i className="pi pi-star-fill"></i>
+                <i className="pi pi-star-fill"></i>
+                <i className="pi pi-star-fill"></i>
+              </div>
             </div>
             <div className="rating">
               <p>Add to favorite</p>
-              <Image src={favorite} alt="favorite" width={50} height={20} />
+              <div className="heart">
+                <i className="pi pi-heart-fill"></i>
+              </div>
             </div>
           </div>
         </div>
