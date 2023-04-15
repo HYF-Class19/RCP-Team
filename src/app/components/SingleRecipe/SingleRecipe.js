@@ -3,12 +3,13 @@
 import React, { useState, useEffect } from "react";
 import "./SingleRecipe.css";
 import Image from "next/image";
-import rating from "../../../../public/assets/rating.jpeg";
+// import rating from "../../../../public/assets/rating.jpeg";
 import alarm from "../../../../public/assets/alarm.jpeg";
 import people from "../../../../public/assets/people.jpeg";
 import noRating from "../../../../public/assets/no-rating.jpeg";
 import favorite from "../../../../public/assets/favorite.png";
 import Link from "next/link";
+import { Rating } from "./Rating";
 
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
@@ -65,7 +66,8 @@ export const SingleRecipe = (props) => {
         <div className="singleRecipe">
           <p className="dishName fontStyle">{recipe.title}</p>
           <div className="dishInfo">
-            <Image src={rating} alt="rating" width={80} height={50} />
+            {/* <Image src={rating} alt="rating" width={80} height={50} /> */}
+            <Rating dishId={recipe.id} />
             <div className="flex gap-3 align-items-center">
               <Image src={alarm} alt="time" width={40} height={40} />
               <p>{recipe.readyInMinutes} min</p>
