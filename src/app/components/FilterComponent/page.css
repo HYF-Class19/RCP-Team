@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Ubuntu";
+}
+
+.main {
+  background-color: white;
+  color: black;
+}
+
+.filter-showcase {
+  display: flex;
+}
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 30px;
+  font-weight: lighter;
+  padding: 50px 118px;
+}
+
+h2 a {
+  font-weight: bold;
+}
