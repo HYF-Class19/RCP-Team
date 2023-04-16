@@ -1,10 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Rating from "react-star-rating-component";
 import "./SingleRecipe.css";
 import { db } from "../../services/Firebase";
 import { collection, getDocs } from "firebase/firestore";
 
-export const Rating = (props) => {
+export const ShowRating = (props) => {
   const [rating, setRating] = useState(0);
   const usersCollectionRef = collection(db, "rating");
   console.log(props.dishId);
@@ -31,7 +32,16 @@ export const Rating = (props) => {
     getRating();
   }, []);
 
-  return <h2>{rating}</h2>;
+  return (
+    <div>
+      <Rating
+        value={rating}
+        starCount={5}
+        starColor={"#ffb400"}
+        emptyStarColor={"#ccc"}
+      />
+    </div>
+  );
 };
 
-export default Rating;
+export default ShowRating;
