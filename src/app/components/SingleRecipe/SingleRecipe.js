@@ -1,16 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import './SingleRecipe.css';
-import Image from 'next/image';
-import rating from '../../../../public/assets/rating.jpeg';
-import alarm from '../../../../public/assets/alarm.jpeg';
-import people from '../../../../public/assets/people.jpeg';
-import Link from 'next/link';
-import 'primeicons/primeicons.css';
-import { db } from '../../services/Firebase';
-import { collection, addDoc } from 'firebase/firestore';
-import { Toast } from 'primereact/toast';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import "./SingleRecipe.css";
+import Image from "next/image";
+// import rating from "../../../../public/assets/rating.jpeg";
+import alarm from "../../../../public/assets/alarm.jpeg";
+import people from "../../../../public/assets/people.jpeg";
+import noRating from "../../../../public/assets/no-rating.jpeg";
+import favorite from "../../../../public/assets/favorite.png";
+import Link from "next/link";
+import { ShowRating } from "./ShowRating";
+import "primeicons/primeicons.css";
+import { db } from "../../services/Firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { Toast } from "primereact/toast";
 
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
@@ -21,7 +24,7 @@ export const SingleRecipe = (props) => {
   const [recipeImage, setRecipeImage] = useState();
   const toast = useRef(null);
 
-  const favoritesCollectionRef = collection(db, 'favorites');
+  const favoritesCollectionRef = collection(db, "favorites");
 
   const createFavorites = async () => {
     await addDoc(favoritesCollectionRef, {
@@ -32,18 +35,18 @@ export const SingleRecipe = (props) => {
       recipeID: recipeId,
     });
     toast.current.show({
-      severity: 'success',
-      summary: 'Success',
-      detail: 'Recipe added to Favorites',
+      severity: "success",
+      summary: "Success",
+      detail: "Recipe added to Favorites",
       life: 3000,
     });
   };
 
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'X-RapidAPI-Key': 'b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b',
-      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+      "X-RapidAPI-Key": "b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b",
+      "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
     },
   };
 
@@ -90,13 +93,14 @@ export const SingleRecipe = (props) => {
         <div>
           <Toast ref={toast} />
           <h2>
-            <Link href="#">HOME</Link> {'>'} Dish Recipe
+            <Link href="#">HOME</Link> {">"} Dish Recipe
           </h2>
         </div>
         <div className="singleRecipe">
           <p className="dishName fontStyle">{recipe.title}</p>
           <div className="dishInfo">
-            <Image src={rating} alt="rating" width={80} height={50} />
+            {/* <Image src={rating} alt="rating" width={80} height={50} /> */}
+            <ShowRating dishId={recipe.id} />
             <div className="flex gap-3 align-items-center">
               <Image src={alarm} alt="time" width={40} height={40} />
               <p>{recipe.readyInMinutes} min</p>
