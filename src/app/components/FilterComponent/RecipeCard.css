@@ -3,6 +3,10 @@
   height: 280px;
 }
 
+.single-recipe:hover {
+  cursor: pointer;
+}
+
 .single-recipe .recipe-image {
   border-radius: 26px;
 }
