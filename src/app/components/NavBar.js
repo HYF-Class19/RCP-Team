@@ -1,7 +1,7 @@
-"use client";
-import "./NavBar.css";
-import Link from "next/link";
-import React, { useState } from "react";
+'use client';
+import './NavBar.css';
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 export const NavBar = () =>
   // getDietsData,
@@ -41,7 +41,7 @@ export const NavBar = () =>
       <div className="navbar">
         <input type="checkbox" id="toggle" />
         <label htmlFor="toggle">
-          {" "}
+          {' '}
           Menu <i className="pi pi-bars"></i>
         </label>
 
@@ -49,31 +49,31 @@ export const NavBar = () =>
           <li>
             <Link
               href={{
-                pathname: "../",
+                pathname: '../',
               }}
             >
               <i
                 className="pi pi-home"
-                style={{ color: "white", fontSize: "1.5rem" }}
-              ></i>{" "}
+                style={{ color: 'white', fontSize: '1.5rem' }}
+              ></i>{' '}
               Home
             </Link>
           </li>
           <li>
             <a href="#">
-              Menu Origin{" "}
-              <i className="pi pi-angle-down" style={{ color: "white" }}></i>
+              Menu Origin{' '}
+              <i className="pi pi-angle-down" style={{ color: 'white' }}></i>
             </a>
             <ul>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "",
-                      menuOriginData: "indian",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: '',
+                      menuOriginData: 'indian',
                     },
                   }}
                 >
@@ -83,12 +83,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "",
-                      menuOriginData: "african",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: '',
+                      menuOriginData: 'african',
                     },
                   }}
                 >
@@ -98,12 +98,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "",
-                      menuOriginData: "chinese",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: '',
+                      menuOriginData: 'chinese',
                     },
                   }}
                 >
@@ -113,12 +113,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "",
-                      menuOriginData: "american",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: '',
+                      menuOriginData: 'american',
                     },
                   }}
                 >
@@ -128,12 +128,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "",
-                      menuOriginData: "european",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: '',
+                      menuOriginData: 'european',
                     },
                   }}
                 >
@@ -143,12 +143,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "",
-                      menuOriginData: "french",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: '',
+                      menuOriginData: 'french',
                     },
                   }}
                 >
@@ -158,12 +158,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "",
-                      menuOriginData: "italian",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: '',
+                      menuOriginData: 'italian',
                     },
                   }}
                 >
@@ -173,12 +173,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "",
-                      menuOriginData: "mediterranean",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: '',
+                      menuOriginData: 'mediterranean',
                     },
                   }}
                 >
@@ -188,12 +188,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "",
-                      menuOriginData: "mexican",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: '',
+                      menuOriginData: 'mexican',
                     },
                   }}
                 >
@@ -204,19 +204,19 @@ export const NavBar = () =>
           </li>
           <li>
             <a href="#">
-              Dietary{" "}
-              <i className="pi pi-angle-down" style={{ color: "white" }}></i>
+              Dietary{' '}
+              <i className="pi pi-angle-down" style={{ color: 'white' }}></i>
             </a>
             <ul>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "vegetarian",
-                      menuOriginData: "",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: 'vegetarian',
+                      menuOriginData: '',
                     },
                   }}
                 >
@@ -226,12 +226,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "vegan",
-                      menuOriginData: "",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: 'vegan',
+                      menuOriginData: '',
                     },
                   }}
                 >
@@ -241,12 +241,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "pescetarian",
-                      menuOriginData: "",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: 'pescetarian',
+                      menuOriginData: '',
                     },
                   }}
                 >
@@ -256,12 +256,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "primal",
-                      menuOriginData: "",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: 'primal',
+                      menuOriginData: '',
                     },
                   }}
                 >
@@ -271,12 +271,12 @@ export const NavBar = () =>
               <li>
                 <Link
                   href={{
-                    pathname: "/components/FilterComponent",
+                    pathname: '/components/FilterComponent',
                     query: {
-                      ingredientsData: "",
-                      excludeIngredientsData: "",
-                      dietsData: "paleo",
-                      menuOriginData: "",
+                      ingredientsData: '',
+                      excludeIngredientsData: '',
+                      dietsData: 'paleo',
+                      menuOriginData: '',
                     },
                   }}
                 >
@@ -286,12 +286,18 @@ export const NavBar = () =>
             </ul>
           </li>
           <li>
-            <a href="#">Top Recipes</a>
+            <Link
+              href={{
+                pathname: '/components/Favorites',
+              }}
+            >
+              Favorite Recipes
+            </Link>
           </li>
           <li>
             <Link
               href={{
-                pathname: "/components/RandomRecipe",
+                pathname: '/components/RandomRecipe',
               }}
             >
               Random Recipe
