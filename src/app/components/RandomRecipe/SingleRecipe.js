@@ -1,13 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../SingleRecipe/SingleRecipe.css';
 import Image from 'next/image';
 import rating from '../../../../public/assets/rating.jpeg';
 import alarm from '../../../../public/assets/alarm.jpeg';
 import people from '../../../../public/assets/people.jpeg';
 import Link from 'next/link';
-// Save favorite recipes
+import { db } from '../../services/Firebase';
+import { collection, addDoc } from 'firebase/firestore';
+import { Toast } from 'primereact/toast';
 
 export const SingleRecipe = () => {
   const [recipe, setRecipes] = useState([]);
@@ -16,6 +18,25 @@ export const SingleRecipe = () => {
   const [recipeTime, setRecipeTime] = useState();
   const [recipeServings, setRecipeServings] = useState();
   const [recipeImage, setRecipeImage] = useState();
+  const toast = useRef(null);
+
+  const favoritesCollectionRef = collection(db, 'favorites');
+
+  const createFavorites = async () => {
+    await addDoc(favoritesCollectionRef, {
+      image: recipeImage,
+      servings: recipeServings,
+      time: recipeTime,
+      title: recipeTitle,
+      recipeID: recipeId,
+    });
+    toast.current.show({
+      severity: 'success',
+      summary: 'Success',
+      detail: 'Recipe added to Favorites',
+      life: 3000,
+    });
+  };
 
   const options = {
     method: 'GET',
@@ -31,10 +52,9 @@ export const SingleRecipe = () => {
       options
     );
     const data = await response.json();
-    const recipe = data.recipes; // array
+    const recipe = data.recipes;
     const singleRecipe = recipe[0];
     setRecipeID(singleRecipe.id);
-    //console.log(recipeId);
   };
 
   const fetchRecipe = async () => {
@@ -44,6 +64,10 @@ export const SingleRecipe = () => {
     );
     const recipeInfo = await response.json();
     setRecipes(recipeInfo);
+    setRecipeTitle(recipe.title),
+      setRecipeServings(Number(recipe.servings)),
+      setRecipeTime(recipe.readyInMinutes),
+      setRecipeImage(recipe.image);
   };
 
   fetchRecipe();
@@ -51,18 +75,6 @@ export const SingleRecipe = () => {
   useEffect(() => {
     fetchRecipeID();
   }, []);
-
-  const saveFavorite = (recipe) => {
-    setRecipeTitle(recipe.title),
-      setRecipeServings(Number(recipe.servings)),
-      setRecipeTime(recipe.readyInMinutes),
-      setRecipeImage(recipe.image);
-    console.log(recipe.id);
-    console.log('title:', recipeTitle),
-      console.log('servings:', recipeServings),
-      console.log('time:', recipeTime);
-    console.log('image', recipeImage);
-  };
 
   const getIngredients = (recipe) => {
     const ingredients = recipe.extendedIngredients;
@@ -87,6 +99,7 @@ export const SingleRecipe = () => {
     return (
       <>
         <div>
+          <Toast ref={toast} />
           <h2>
             <Link href="../">Home</Link> {'>'} Random Recipe
           </h2>
@@ -130,7 +143,7 @@ export const SingleRecipe = () => {
                 <i className="pi pi-star-fill"></i>
               </div>
             </div>
-            <div className="rating" onClick={() => saveFavorite(recipe)}>
+            <div className="rating" onClick={createFavorites}>
               <p>Add to favorite</p>
               <div className="heart">
                 <i className="pi pi-heart-fill"></i>

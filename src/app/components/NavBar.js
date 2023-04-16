@@ -286,7 +286,13 @@ export const NavBar = () =>
             </ul>
           </li>
           <li>
-            <a href="#">Top Recipes</a>
+            <Link
+              href={{
+                pathname: '/components/Favorites',
+              }}
+            >
+              Favorite Recipes
+            </Link>
           </li>
           <li>
             <Link

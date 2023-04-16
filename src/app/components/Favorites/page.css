@@ -37,7 +37,6 @@ h2 a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   gap: 42px;
   padding: 20px;
   width: 1350px;
