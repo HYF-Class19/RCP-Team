@@ -12,9 +12,8 @@ import 'primeicons/primeicons.css';
 
 export const RecipeCard = () => {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+  const [version, setVersion] = useState(1);
   const toast = useRef(null);
-
-  const favoritesCollectionRef = collection(db, 'favorites');
 
   const deleteFavoriteRecipe = async (id) => {
     const favoriteDoc = doc(db, 'favorites', id);
@@ -25,9 +24,13 @@ export const RecipeCard = () => {
       detail: 'Recipe deleted. Please refresh!',
       life: 3000,
     });
+
+    setVersion(version + 1);
   };
 
   useEffect(() => {
+    const favoritesCollectionRef = collection(db, 'favorites');
+
     const getFavoriteRecipes = async () => {
       const data = await getDocs(favoritesCollectionRef);
       console.log('data', data);
@@ -37,7 +40,7 @@ export const RecipeCard = () => {
     };
 
     getFavoriteRecipes();
-  }, []);
+  }, [version]);
 
   return (
     <>

@@ -29,7 +29,7 @@ Here is all the design
 
 ## Single Recipe page
 
-<img src="./Assets/one-recipe-figma.png" width="800" />
+<img src="./Assets/one-recipe.png" width="800" />
 <br>
 <br>
 <br>

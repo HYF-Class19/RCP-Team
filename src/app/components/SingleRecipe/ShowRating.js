@@ -8,8 +8,6 @@ import { collection, getDocs } from "firebase/firestore";
 export const ShowRating = (props) => {
   const [rating, setRating] = useState(0);
   const usersCollectionRef = collection(db, "rating");
-  console.log(props.dishId);
-
   const getRating = async () => {
     const data = await getDocs(usersCollectionRef);
     const dataArr = data.docs.map((doc) => ({ ...doc.data() }));
