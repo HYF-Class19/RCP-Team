@@ -1,13 +1,13 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Rating from 'react-star-rating-component';
-import './SingleRecipe.css';
-import { db } from '../../services/Firebase';
-import { collection, getDocs } from 'firebase/firestore';
+"use client";
+import React, { useState, useEffect } from "react";
+import { Rating } from "primereact/rating";
+import "./SingleRecipe.css";
+import { db } from "../../services/Firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 export const ShowRating = (props) => {
   const [rating, setRating] = useState(0);
-  const usersCollectionRef = collection(db, 'rating');
+  const usersCollectionRef = collection(db, "rating");
   const getRating = async () => {
     const data = await getDocs(usersCollectionRef);
     const dataArr = data.docs.map((doc) => ({ ...doc.data() }));
@@ -32,12 +32,7 @@ export const ShowRating = (props) => {
 
   return (
     <div>
-      <Rating
-        value={rating}
-        starCount={5}
-        starColor={'#ffb400'}
-        emptyStarColor={'#ccc'}
-      />
+      <Rating value={rating} stars={5} cancel={false} />
     </div>
   );
 };
