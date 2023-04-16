@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../services/Firebase";
 
 import { InputText } from "primereact/inputtext";
 import { Checkbox } from "primereact/checkbox";
@@ -9,12 +10,9 @@ import { Toast } from "primereact/toast";
 import { classNames } from "primereact/utils";
 import styles from "./Account.module.css";
 
-import { auth, db } from "../services/Firebase";
-
-
 export const Join = () => {
 
-    const [name, setName] = useState("");
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,6 +42,14 @@ export const Join = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log("User registered:", user.email);
+      // Add additional user data to Firestore
+      const userRef = doc(db, "users", userCredential.user.uid);
+      setDoc(userRef, {
+        name: name,
+        username: username,
+        email: email,
+      })
+
       // TODO: Redirect user to the login page or home page
     } catch (error) {
       console.error("Error registering user:", error);
