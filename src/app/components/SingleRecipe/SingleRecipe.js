@@ -1,19 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-import React, { useState, useEffect, useRef } from "react";
-import "./SingleRecipe.css";
-import Image from "next/image";
+'use client';
+import React, { useState, useEffect, useRef } from 'react';
+import './SingleRecipe.css';
+import Image from 'next/image';
 // import rating from "../../../../public/assets/rating.jpeg";
-import alarm from "../../../../public/assets/alarm.jpeg";
-import people from "../../../../public/assets/people.jpeg";
-import noRating from "../../../../public/assets/no-rating.jpeg";
-import favorite from "../../../../public/assets/favorite.png";
-import Link from "next/link";
-import { ShowRating } from "./ShowRating";
-import "primeicons/primeicons.css";
-import { db } from "../../services/Firebase";
-import { collection, addDoc } from "firebase/firestore";
-import { Toast } from "primereact/toast";
+import alarm from '../../../../public/assets/alarm.jpeg';
+import people from '../../../../public/assets/people.jpeg';
+import Link from 'next/link';
+import { ShowRating } from './ShowRating';
+import 'primeicons/primeicons.css';
+import { db } from '../../services/Firebase';
+import { collection, addDoc } from 'firebase/firestore';
+import { Toast } from 'primereact/toast';
 
 export const SingleRecipe = (props) => {
   const [recipe, setRecipes] = useState([]);
@@ -24,7 +22,7 @@ export const SingleRecipe = (props) => {
   const [recipeImage, setRecipeImage] = useState();
   const toast = useRef(null);
 
-  const favoritesCollectionRef = collection(db, "favorites");
+  const favoritesCollectionRef = collection(db, 'favorites');
 
   const createFavorites = async () => {
     await addDoc(favoritesCollectionRef, {
@@ -35,38 +33,46 @@ export const SingleRecipe = (props) => {
       recipeID: recipeId,
     });
     toast.current.show({
-      severity: "success",
-      summary: "Success",
-      detail: "Recipe added to Favorites",
+      severity: 'success',
+      summary: 'Success',
+      detail: 'Recipe added to Favorites',
       life: 3000,
     });
   };
 
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b",
-      "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-    },
-  };
-
-  const fetchRecipe = async () => {
-    const response = await fetch(
-      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${props.dishId}/information?includeNutrition=true`,
-      options
-    );
-    const recipeInfo = await response.json();
-    setRecipes(recipeInfo);
-    setRecipeTitle(recipe.title),
-      setRecipeServings(recipe.servings),
-      setRecipeTime(recipe.readyInMinutes),
-      setRecipeImage(recipe.image);
-    setRecipeID(recipe.id);
-  };
+  //setItems();
 
   useEffect(() => {
-    fetchRecipe();
-  }, []);
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': 'b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b',
+        'X-RapidAPI-Host':
+          'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+      },
+    };
+
+    const fetchRecipe = async (props) => {
+      const response = await fetch(
+        `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${props.dishId}/information?includeNutrition=true`,
+        options
+      );
+      const recipeInfo = await response.json();
+      setRecipes(recipeInfo);
+      setRecipeID(recipe.id);
+      setRecipeTitle(recipe.title),
+        setRecipeServings(Number(recipe.servings)),
+        setRecipeTime(recipe.readyInMinutes),
+        setRecipeImage(recipe.image);
+      // console.log('recipe', recipe);
+      // console.log('setting recipe', recipe.image);
+      // console.log('setting recipe', recipe.id);
+      // console.log('setting recipe', recipe.readyInMinutes);
+      // console.log('setting recipe', recipe.title);
+    };
+
+    fetchRecipe(props);
+  }, [recipe, props]);
 
   const getIngredients = (recipe) => {
     const ingredients = recipe.extendedIngredients;
@@ -93,7 +99,7 @@ export const SingleRecipe = (props) => {
         <div>
           <Toast ref={toast} />
           <h2>
-            <Link href="#">HOME</Link> {">"} Dish Recipe
+            <Link href="#">HOME</Link> {'>'} Dish Recipe
           </h2>
         </div>
         <div className="singleRecipe">
@@ -136,7 +142,7 @@ export const SingleRecipe = (props) => {
                 <i className="pi pi-star-fill"></i>
               </div>
             </div>
-            <div className="rating" onClick={createFavorites}>
+            <div className="rating" onClick={() => createFavorites()}>
               <p>Add to favorite</p>
               <div className="heart">
                 <i className="pi pi-heart-fill"></i>
