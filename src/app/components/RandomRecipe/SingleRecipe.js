@@ -8,10 +8,11 @@ import alarm from '../../../../public/assets/alarm.jpeg';
 import people from '../../../../public/assets/people.jpeg';
 import Link from 'next/link';
 import { db } from '../../services/Firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { Toast } from 'primereact/toast';
 
 export const SingleRecipe = () => {
+  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
   const [recipe, setRecipes] = useState([]);
   const [recipeId, setRecipeID] = useState();
   const [recipeTitle, setRecipeTitle] = useState();
@@ -19,23 +20,58 @@ export const SingleRecipe = () => {
   const [recipeServings, setRecipeServings] = useState();
   const [recipeImage, setRecipeImage] = useState();
   const toast = useRef(null);
+  const [version, setVersion] = useState(1);
 
   const favoritesCollectionRef = collection(db, 'favorites');
 
+  useEffect(() => {
+    const getFavoriteRecipes = async () => {
+      const data = await getDocs(favoritesCollectionRef);
+      setFavoriteRecipes(
+        data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
+    };
+
+    getFavoriteRecipes();
+    console.log(favoriteRecipes);
+  }, [version]);
+
   const createFavorites = async () => {
-    await addDoc(favoritesCollectionRef, {
+    const unique = {
       image: recipeImage,
       servings: recipeServings,
       time: recipeTime,
       title: recipeTitle,
       recipeID: recipeId,
-    });
-    toast.current.show({
-      severity: 'success',
-      summary: 'Success',
-      detail: 'Recipe added to Favorites',
-      life: 3000,
-    });
+    };
+
+    const isObjectInArray = favoriteRecipes.some(
+      (obj) => obj.recipeID === unique.recipeID
+    );
+
+    if (!isObjectInArray) {
+      await addDoc(favoritesCollectionRef, {
+        image: recipeImage,
+        servings: recipeServings,
+        time: recipeTime,
+        title: recipeTitle,
+        recipeID: recipeId,
+      });
+      toast.current.show({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'Recipe added to Favorites',
+        life: 3000,
+      });
+      setVersion(version + 1);
+    } else {
+      toast.current.show({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Recipe already exits! Please select another recipe.',
+        life: 4500,
+      });
+    }
   };
 
   const options = {
