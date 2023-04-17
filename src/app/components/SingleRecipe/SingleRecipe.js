@@ -11,7 +11,7 @@ import { ShowRating } from "./ShowRating";
 import { UpdateRating } from "./UpdateRating";
 import "primeicons/primeicons.css";
 import { db } from "../../services/Firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 import { Toast } from "primereact/toast";
 
 export const SingleRecipe = (props) => {
@@ -166,13 +166,6 @@ export const SingleRecipe = (props) => {
             <div className="rating">
               <p>Rate</p>
               <UpdateRating dishId={recipe.id} />
-              {/* <div className="stars">
-                <i className="pi pi-star-fill"></i>
-                <i className="pi pi-star-fill"></i>
-                <i className="pi pi-star-fill"></i>
-                <i className="pi pi-star-fill"></i>
-                <i className="pi pi-star-fill"></i>
-              </div> */}
             </div>
             <div className="rating" onClick={() => createFavorites()}>
               <p>Add to favorite</p>
