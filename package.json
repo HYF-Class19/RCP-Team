@@ -25,5 +25,8 @@
     "react-hook-form": "^7.43.9",
     "react-router-dom": "^6.10.0",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.35.0"
   }
 }
