@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -14,23 +14,21 @@ import { ShowRecipes } from "./ShowRecipes";
 export default function Home() {
   const getId = useSearchParams();
 
-  const [ingredientsData, setIngredientsData] = useState([
-    getId.get("ingredientsData"),
-  ]);
-  const [excludeIngredientsData, setExcludeIngredientsData] = useState([
-    getId.get("excludeIngredientsData"),
-  ]);
-  const [dietsData, setDietsData] = useState({
-    diets: [getId.get("dietsData")],
-  });
-  const [menuOriginData, setMenuOrigin] = useState({
-    menus: [getId.get("menuOriginData")],
-  });
+  const [ingredientsData, setIngredientsData] = useState();
+  const [excludeIngredientsData, setExcludeIngredientsData] = useState();
+  const [dietsData, setDietsData] = useState();
+  const [menuOriginData, setMenuOrigin] = useState();
 
-  // console.log("Page Parent", ingredientsData);
-  // console.log("Page Parent", excludeIngredientsData);
-  // console.log("Page Parent", dietsData);
-  // console.log("Page Parent", menuOriginData);
+  useEffect(() => {
+    setIngredientsData([getId.get("ingredientsData")]);
+    setExcludeIngredientsData([getId.get("excludeIngredientsData")]);
+    setDietsData({
+      diets: [getId.get("dietsData")],
+    });
+    setMenuOrigin({
+      menus: [getId.get("menuOriginData")],
+    });
+  }, [getId]);
 
   const setSearchNewRecipes = (
     includeIngredients,
