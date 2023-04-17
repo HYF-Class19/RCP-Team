@@ -4,10 +4,10 @@
   - [What can I cook?](#what-can-i-cook)
   - [Project aspect and roles](#project-aspect-and-roles)
   - [The RoadMap](#the-roadmap)
-  - [some Screenshots](#some-screenshots)
+  - [Screenshots](#screenshots)
   - [npm Library used](#npm-library-used)
 
-![logo](public/assets/design/../RCP-logo.jpg)
+![logo](public/assets/logo.png)
 
 ## What can I cook?
 
@@ -21,13 +21,12 @@ You can also exclude some ingredients that you do not like or have food allergie
 
 Each of the team participates in all the tasks of the project. But based on the strengths of each participant, we assigned the roles. You can find all the project aspect and the main roles for each.
 
-- Management [John](https://github.com/johnedelbi)
+- project manager [John](https://github.com/johnedelbi)
 - Documentation (All of us)
-- Design [Valeriya](https://github.com/V-Valkiriya) | [Renjani](https://github.com/renjani2022)
-- Data [Valeriya](https://github.com/V-Valkiriya) | [Renjani](https://github.com/renjani2022)
+- Ux/Ui [Valeriya](https://github.com/V-Valkiriya) | [Renjani](https://github.com/renjani2022)
 - Code [John](https://github.com/johnedelbi) | [Bibha](https://github.com/bibhasingh) | [Brian](https://github.com/BrianMunene96)
 - Unit testing (All of us)
-- Presentation [Brian](https://github.com/BrianMunene96)
+- Presentation [John](https://github.com/johnedelbi)
 
 ## The RoadMap
 
@@ -50,13 +49,23 @@ After brainstorming with the team, we decided to divide the project into several
   - HTML/CSS
   - React code
   - Database structure
+- week 4 (v2)
+  - implement user join/login using email password
+  - use firebase services (Auth & FireStore)
+  - implement single recipe functionality
+  
+- week 5 (v3)
+  - implement add to favorite
+  - implement recipe rating
+  - implement reset password
 
 In the coming weeks the rest will be added.
 
-## some Screenshots
+## Screenshots
 
-![logo](public/assets/design/../RCP-logo.jpg)
-<img src="public/assets/logo.png" width="350" />
+![logo](./planning/Assets/figma-homepage.png)
+![logo](./planning/Assets/figma-userccount.png)
+![logo](./planning/Assets/one-recipe.png)
 
 ## npm Library used
 
