@@ -61,12 +61,6 @@ export const ShowRecipes = ({
         const data = await response.json();
         detailedRecipes = data.results;
 
-        //console.log(dataResults);
-        //detailedRecipes = await getRecipeInformation(dataResults);
-        //console.log(detailedRecipes);
-
-        //console.log('fetched recipes');
-
         window.localStorage.setItem(
           url,
           JSON.stringify({
@@ -75,9 +69,6 @@ export const ShowRecipes = ({
           })
         );
       }
-
-      //console.log('set recpices');
-      //console.log(detailedRecipes);
 
       setRecipes(detailedRecipes);
       setLoading(false);
