@@ -7,14 +7,18 @@ export const Footer = () => {
   return (
     <div className="footer">
       <div className="flex gap-4 align-self-center buttons">
-        <Link href="/about">
+        <Link href={{
+                pathname: '/components/about',
+              }}>
           <Button label="About Us" className="footerB" />
         </Link>
 
         <a href="/contact">
           <Button label="Contact" className="footerB" />
         </a>
-        <Link href="/terms">
+        <Link href={{
+                pathname: '/components/terms',
+              }}>
           <Button label="Terms Of Use" className="footerB" />
         </Link>
       </div>
