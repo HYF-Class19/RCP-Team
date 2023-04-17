@@ -1,16 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import './SingleRecipe.css';
-import Image from 'next/image';
-import alarm from '../../../../public/assets/alarm.jpeg';
-import people from '../../../../public/assets/people.jpeg';
-import Link from 'next/link';
-import { ShowRating } from './ShowRating';
-import 'primeicons/primeicons.css';
-import { db } from '../../services/Firebase';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
-import { Toast } from 'primereact/toast';
+
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import "./SingleRecipe.css";
+import Image from "next/image";
+import alarm from "../../../../public/assets/alarm.jpeg";
+import people from "../../../../public/assets/people.jpeg";
+import Link from "next/link";
+import { ShowRating } from "./ShowRating";
+import { UpdateRating } from "./UpdateRating";
+import "primeicons/primeicons.css";
+import { db } from "../../services/Firebase";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { Toast } from "primereact/toast";
 
 export const SingleRecipe = (props) => {
   const [checkFavorites, setCheckFavorites] = useState([]);
@@ -23,7 +25,7 @@ export const SingleRecipe = (props) => {
   const toast = useRef(null);
   const [version, setVersion] = useState(1);
 
-  const favoritesCollectionRef = collection(db, 'favorites');
+  const favoritesCollectionRef = collection(db, "favorites");
 
   useEffect(() => {
     const getFavoriteRecipes = async () => {
@@ -59,18 +61,18 @@ export const SingleRecipe = (props) => {
         recipeID: recipeId,
       });
       toast.current.show({
-        severity: 'success',
-        summary: 'Success',
-        detail: 'Recipe added to Favorites',
+        severity: "success",
+        summary: "Success",
+        detail: "Recipe added to Favorites",
         life: 3000,
       });
       setVersion(version + 1);
-      console.log('item added');
+      console.log("item added");
     } else {
       toast.current.show({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'Recipe already exists! Please select another recipe',
+        severity: "error",
+        summary: "Error",
+        detail: "Recipe already exists! Please select another recipe",
         life: 4500,
       });
     }
@@ -78,11 +80,11 @@ export const SingleRecipe = (props) => {
 
   useEffect(() => {
     const options = {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'X-RapidAPI-Key': 'b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b',
-        'X-RapidAPI-Host':
-          'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+        "X-RapidAPI-Key": "b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b",
+        "X-RapidAPI-Host":
+          "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },
     };
 
@@ -128,7 +130,7 @@ export const SingleRecipe = (props) => {
         <div>
           <Toast ref={toast} />
           <h2>
-            <Link href="#">HOME</Link> {'>'} Dish Recipe
+            <Link href="#">HOME</Link> {">"} Dish Recipe
           </h2>
         </div>
         <div className="singleRecipe">
@@ -163,13 +165,7 @@ export const SingleRecipe = (props) => {
           <div className="rateSection">
             <div className="rating">
               <p>Rate</p>
-              <div className="stars">
-                <i className="pi pi-star-fill"></i>
-                <i className="pi pi-star-fill"></i>
-                <i className="pi pi-star-fill"></i>
-                <i className="pi pi-star-fill"></i>
-                <i className="pi pi-star-fill"></i>
-              </div>
+              <UpdateRating dishId={recipe.id} />
             </div>
             <div className="rating" onClick={() => createFavorites()}>
               <p>Add to favorite</p>
