@@ -3,17 +3,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './SingleRecipe.css';
 import Image from 'next/image';
-// import rating from "../../../../public/assets/rating.jpeg";
 import alarm from '../../../../public/assets/alarm.jpeg';
 import people from '../../../../public/assets/people.jpeg';
 import Link from 'next/link';
 import { ShowRating } from './ShowRating';
 import 'primeicons/primeicons.css';
 import { db } from '../../services/Firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { Toast } from 'primereact/toast';
 
 export const SingleRecipe = (props) => {
+  const [checkFavorites, setCheckFavorites] = useState([]);
   const [recipe, setRecipes] = useState([]);
   const [recipeId, setRecipeID] = useState();
   const [recipeTitle, setRecipeTitle] = useState();
@@ -21,26 +21,60 @@ export const SingleRecipe = (props) => {
   const [recipeServings, setRecipeServings] = useState();
   const [recipeImage, setRecipeImage] = useState();
   const toast = useRef(null);
+  const [version, setVersion] = useState(1);
 
   const favoritesCollectionRef = collection(db, 'favorites');
 
+  useEffect(() => {
+    const getFavoriteRecipes = async () => {
+      const data = await getDocs(favoritesCollectionRef);
+      setCheckFavorites(
+        data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
+    };
+
+    getFavoriteRecipes();
+    console.log(checkFavorites);
+  }, [version]);
+
   const createFavorites = async () => {
-    await addDoc(favoritesCollectionRef, {
+    const checkDuplicate = {
       image: recipeImage,
       servings: recipeServings,
       time: recipeTime,
       title: recipeTitle,
       recipeID: recipeId,
-    });
-    toast.current.show({
-      severity: 'success',
-      summary: 'Success',
-      detail: 'Recipe added to Favorites',
-      life: 3000,
-    });
-  };
+    };
 
-  //setItems();
+    const duplicateObject = checkFavorites.some(
+      (obj) => obj.recipeID === checkDuplicate.recipeID
+    );
+
+    if (!duplicateObject) {
+      await addDoc(favoritesCollectionRef, {
+        image: recipeImage,
+        servings: recipeServings,
+        time: recipeTime,
+        title: recipeTitle,
+        recipeID: recipeId,
+      });
+      toast.current.show({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'Recipe added to Favorites',
+        life: 3000,
+      });
+      setVersion(version + 1);
+      console.log('item added');
+    } else {
+      toast.current.show({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Recipe already exists! Please select another recipe',
+        life: 4500,
+      });
+    }
+  };
 
   useEffect(() => {
     const options = {
@@ -64,11 +98,6 @@ export const SingleRecipe = (props) => {
         setRecipeServings(Number(recipe.servings)),
         setRecipeTime(recipe.readyInMinutes),
         setRecipeImage(recipe.image);
-      // console.log('recipe', recipe);
-      // console.log('setting recipe', recipe.image);
-      // console.log('setting recipe', recipe.id);
-      // console.log('setting recipe', recipe.readyInMinutes);
-      // console.log('setting recipe', recipe.title);
     };
 
     fetchRecipe(props);

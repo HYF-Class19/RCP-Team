@@ -18,6 +18,7 @@ export const RecipeCard = () => {
   const deleteFavoriteRecipe = async (id) => {
     const favoriteDoc = doc(db, 'favorites', id);
     await deleteDoc(favoriteDoc);
+
     toast.current.show({
       severity: 'success',
       summary: 'Success',
@@ -33,7 +34,6 @@ export const RecipeCard = () => {
 
     const getFavoriteRecipes = async () => {
       const data = await getDocs(favoritesCollectionRef);
-      console.log('data', data);
       setFavoriteRecipes(
         data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       );
