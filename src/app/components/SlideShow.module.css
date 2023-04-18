@@ -1,50 +1,27 @@
 .container {
   background-color: rgba(175, 187, 171, 0.33);
   width: 100%;
-
-  padding: 60px;
+  padding: 3%;
 }
 
 .slide {
   background: rgba(36, 80, 61, 0.7);
-  border-radius: 30px;
-  height: 490px;
-  padding: 20px;
 }
 
 .recipeDetail .recipeName {
   color: #fff;
-  margin-top: 20px;
   font-style: normal;
   font-size: 26px;
   /* line-height: 30px; */
   font-weight: 700;
   font-family: "Ubuntu";
-  text-align: center;
-  padding: 0;
-}
-
-/* .carouselStyle {
-  background-color: black;
-} */
-
-.randomRecipe {
-  display: flex;
-  height: 70%;
-  margin: 6% 0;
-  justify-content: center;
-  gap: 20%;
 }
 
 .recipeDetail .recipeButton {
-  margin-top: 100px;
-  margin-left: 20%;
   background-color: #24503d;
-  padding: 11px 11px;
   color: white;
   border: none;
   outline: none;
-  border-radius: 10px;
   font-size: 24px;
 }
 
@@ -52,16 +29,3 @@
   background-color: #e7b10a;
 }
 
-@media only screen and (max-width: 600px) {
-  .randomRecipe {
-    display: block;
-    margin: 0;
-  }
-  .recipeImage {
-    width: 50px;
-    height: 20px;
-  }
-  .slide {
-    height: 600px;
-  }
-}
