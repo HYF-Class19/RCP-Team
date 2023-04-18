@@ -1,7 +1,8 @@
-import React, { useState, useRef  } from 'react';
+'use client';
+import React, { useState, useRef } from 'react';
 
-
-import { auth, db } from "../services/Firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../services/Firebase";
 
 import { InputText } from "primereact/inputtext";
 import { Checkbox } from "primereact/checkbox";
@@ -11,29 +12,32 @@ import { Toast } from "primereact/toast";
 import styles from "./Account.module.css";
 import { classNames } from "primereact/utils";
 
-
-
 export const Login = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [rememberMe, setRememberMe] = useState(false);
     const toast = useRef(null);
+
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-          await auth.setPersistence(
-            rememberMe
-              ? firebase.auth.Auth.Persistence.LOCAL
-              : firebase.auth.Auth.Persistence.SESSION
-          );
-          await auth.signInWithEmailAndPassword(email, password);
+          await signInWithEmailAndPassword(auth, email, password);
+
+          if (rememberMe) {
+            localStorage.setItem("rememberMe", "true");
+          } else {
+            localStorage.removeItem("rememberMe");
+          }
+
           toast.current.show({
             severity: "success",
             summary: "Success",
             detail: "Logged in successfully",
             life: 3000,
           });
+          // Redirect to Favorites
+  
         } catch (error) {
           toast.current.show({
             severity: "error",
@@ -82,7 +86,6 @@ export const Login = () => {
           <label htmlFor="rememberMe" className="p3"> Remember Me</label>
         </div>
         <Button type="submit" label="Login" className={classNames("w-full p-2 border-1 border-solid border-round-md flex  hover:border-200", styles.registerBtn)} />
-        <Button type="submit" label="Forgot your password?" className={classNames("w-full p-2 border-1 border-solid border-round-md flex  hover:border-200 mt-6", styles.forgetBtn)}/>
       </form>
     </div>
          );
