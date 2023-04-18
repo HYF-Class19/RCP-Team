@@ -31,3 +31,45 @@ p {
     line-height: 2em;
     margin-bottom: 50px;
 }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 1050px) {
+    h1 {
+        font-size: 40px;
+     }
+
+     h2 {
+        padding: 20px 20px;
+     }
+
+     .banner img {
+        height: 200px;
+        width: 761px;
+     }
+
+     p {
+        padding: 50px;
+     }
+
+}
+
+@media only screen and (max-width: 600px) {
+    h2 {
+        padding: 20px 20px;
+     }
+
+     .banner img {
+        height: 100px;
+     }
+
+     h1 {
+        margin: 15px 0 0 0;
+        font-size: 30px;
+     }
+
+     p {
+        padding: 20px;
+     }
+
+
+}
