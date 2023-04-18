@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap");
 
 h2 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 30px;
   font-weight: lighter;
   padding-left: 50px;
@@ -18,7 +18,7 @@ h2 a {
 }
 
 .fontStyle {
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -44,7 +44,7 @@ h2 a {
 
 .dishImage {
   text-align: center;
-  margin: 0 30%;
+  margin: 0 35%;
 }
 
 .ingStyle {
@@ -60,7 +60,7 @@ h2 a {
 
 li {
   margin-bottom: 10px;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
   font-style: normal;
   font-weight: 300;
   font-size: 15px;
