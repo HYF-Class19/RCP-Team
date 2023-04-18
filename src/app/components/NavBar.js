@@ -1,44 +1,13 @@
 'use client';
 import './NavBar.css';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 
-export const NavBar = () =>
-  // getDietsData,
-  // setSearchNewRecipes,
-  // callbackDiets,
-  {
-    // const [dietaryInfo, setDietaryInfo] = useState({ diets: [] });
-    // const [selectedDietary, setSelectedDietary] = useState();
-
-    // const dietaryChange = (e) => {
-    //   const { value, checked } = e.target;
-
-    //   const { diets } = dietaryInfo;
-
-    //   if (checked) {
-    //     setDietaryInfo({
-    //       diets: [...diets, value],
-    //     });
-    //   } else {
-    //     setDietaryInfo({
-    //       diets: diets.filter((e) => e !== value),
-    //     });
-    //   }
-    // };
-
-    // // callbackDiets(dietaryInfo);
-
-    // const getDietary = (selectedDiet) => {
-    //   setSelectedDietary(selectedDiet);
-    // };
-
-    // const dietaryClick = () => {
-    //   setSearchNewRecipes(selectedDietary);
-    // };
-
+export const NavBar = () => {
+  
     return (
       <div className="navbar">
+        
         <input type="checkbox" id="toggle" />
         <label htmlFor="toggle">
           {' '}
@@ -308,41 +277,3 @@ export const NavBar = () =>
     );
   };
 
-// const handleClick = async (diet) => {
-//   try {
-//   const res = await fetch(
-//   `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${diet}&diet=${diet}&number=10&limitLicense=false`,
-//   {
-//   method: 'GET',
-//   headers: {
-//   'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-//   'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-//   }
-//   }
-//   );
-//   const data = await res.json();
-//   setSearchNewRecipes(data.results);
-//   } catch (error) {
-//   console.error(error);
-//   }
-//   }
-
-// const [dietSearch, setDietSearch] = useState('')
-
-// const handleClick = (diet) => {
-// setDietSearch(diet)
-// const options = {
-// method: 'GET',
-// headers: {
-//   "X-RapidAPI-Key": "b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b",
-//   "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-// }
-// };
-// const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?apiKey=<your_api_key>&diet=${diet}`
-
-// fetch(url, options)
-//   .then(response => response.json())
-//   .then(response => console.log(response))
-//   .catch(err => console.error(err));
-// }
-//
