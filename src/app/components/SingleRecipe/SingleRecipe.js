@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import "./SingleRecipe.css";
@@ -13,6 +11,7 @@ import "primeicons/primeicons.css";
 import { db } from "../../services/Firebase";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { Toast } from "primereact/toast";
+import {options} from "../../services/Spoonacular"
 
 export const SingleRecipe = (props) => {
   const [checkFavorites, setCheckFavorites] = useState([]);
@@ -79,14 +78,6 @@ export const SingleRecipe = (props) => {
   };
 
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b",
-        "X-RapidAPI-Host":
-          "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      },
-    };
 
     const fetchRecipe = async (props) => {
       const response = await fetch(

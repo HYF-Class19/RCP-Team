@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import {options} from "../services/Spoonacular"
+
 import { Carousel } from "primereact/carousel";
 import { Button } from "primereact/button";
 import { classNames } from "primereact/utils";
@@ -7,13 +9,6 @@ import Link from "next/link";
 import styles from "./SlideShow.module.css";
 
 export const SlideShow = () => {
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b",
-      "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-    },
-  };
 
   const [recipes, setRecipes] = useState([]);
   const [recipeID, setRecipeID] = useState([]);
