@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import "./SingleRecipe.css";
@@ -13,7 +11,7 @@ import "primeicons/primeicons.css";
 import { db } from "../../services/Firebase";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { Toast } from "primereact/toast";
-import {options} from "../api/SpoonacularAPI"
+import {options} from "../../api/SpoonacularAPI"
 
 export const SingleRecipe = (props) => {
   const [checkFavorites, setCheckFavorites] = useState([]);
