@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ShowRecipes.css';
 import { RecipeCard } from './RecipeCard';
 import { Paginate } from './Paginate';
-import {options} from "../../api/SpoonacularAPI"
+import {options} from "../../services/Spoonacular"
 
 // example for the complex filter for the future
 const diet = {};

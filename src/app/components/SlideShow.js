@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {options} from "../api/SpoonacularAPI"
+import {options} from "../services/Spoonacular"
 
 import { Carousel } from "primereact/carousel";
 import { Button } from "primereact/button";
