@@ -67,7 +67,7 @@ export const Join = () => {
 
   
     return (
-      <div className={classNames("m-5 w-auto p-5 border-round-lg w-3", styles.formCard)}>
+      <div className={classNames("w-4 w-auto p-5 border-round-lg w-3 border-round-lg", styles.formCard)}>
       <Toast ref={toast} />
         <form onSubmit={handleRegister}>
           <h2 className='font-bold py-2'>Register</h2>
@@ -125,7 +125,7 @@ export const Join = () => {
           </div>
           <div className="p-field-checkbox py-2">
           <Checkbox
-          className='ml-5'
+          className='ml-1'
             inputId="agree"
             checked={agree}
             onChange={(e) => setAgree(e.checked)}
