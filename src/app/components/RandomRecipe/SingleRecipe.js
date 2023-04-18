@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { db } from '../../services/Firebase';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { Toast } from 'primereact/toast';
-import {options} from "../api/SpoonacularAPI"
+import {options} from "../../services/Spoonacular"
 
 
 export const SingleRecipe = () => {
