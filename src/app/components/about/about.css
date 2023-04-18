@@ -39,3 +39,104 @@ h2 a {
     color: black;
 
 }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 1050px) {
+    .card {
+        width: 100%;
+        padding: 20px;
+     }
+
+    .card img{
+        width: 900px;
+        height: 361px;
+     }
+
+     h1 {
+        font-size: 40px;
+     }
+
+     h2 {
+        padding: 50px 20px;
+     }
+
+     .text {
+        font-size: 18px;
+     }
+}
+
+@media (max-width: 850px) {
+    .card {
+        width: 100%;
+        padding: 20px;
+     }
+
+    .card img{
+        width: 750px;
+        height: 301px;
+     }
+
+     h1 {
+        font-size: 35px;
+     }
+
+     h2 {
+        padding: 50px 20px;
+     }
+
+     .text {
+        font-size: 15px;
+     }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+        padding: 20px;
+     }
+
+    .card img{
+        width: 350px;
+        height: 140px;
+     }
+
+     h1 {
+        font-size: 30px;
+     }
+
+     h2 {
+        padding: 50px 20px;
+     }
+
+     .text {
+        font-size: 15px;
+     }
+}
+
+@media only screen and (max-width: 300px) {
+    .card {
+        width: 100%;
+        padding: 15px;
+     }
+
+    .card img{
+        width: 280px;
+        height: 112px;
+     }
+
+     h1 {
+        font-size: 25px;
+        padding: 15px;
+     }
+
+     h2 {
+        font-size: 25px;
+        padding: 40px 20px;
+     }
+
+     .text {
+        font-size: 13px;
+     }
+}
+
