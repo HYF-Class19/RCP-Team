@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ShowRecipes.css';
 import { RecipeCard } from './RecipeCard';
 import { Paginate } from './Paginate';
+import {options} from "../api/SpoonacularAPI"
 
 // example for the complex filter for the future
 const diet = {};
@@ -29,15 +30,6 @@ export const ShowRecipes = ({
 
   useEffect(() => {
     console.log(url);
-    // API HEADER OPTIONS
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': 'b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b',
-        'X-RapidAPI-Host':
-          'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-      },
-    };
 
     // FETCH INITIAL RECIPE RESULTS WILL BE RECIPES WITH A SPECIFIC ID
     const fetchRecipes = async (url) => {
