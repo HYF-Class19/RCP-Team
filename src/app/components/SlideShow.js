@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {options} from "../services/Spoonacular"
+import { options } from "../services/Spoonacular";
 
 import { Carousel } from "primereact/carousel";
 import { Button } from "primereact/button";
@@ -9,9 +9,7 @@ import Link from "next/link";
 import styles from "./SlideShow.module.css";
 
 export const SlideShow = () => {
-
   const [recipes, setRecipes] = useState([]);
-  const [recipeID, setRecipeID] = useState([]);
 
   const fetchRecipes = async () => {
     const response = await fetch(
@@ -19,6 +17,7 @@ export const SlideShow = () => {
       options
     );
     const data = await response.json();
+    console.log(data);
     setRecipes(data.recipes);
   };
 
@@ -27,7 +26,7 @@ export const SlideShow = () => {
   }, []);
 
   const itemTemplate = (recipe) => {
-    setRecipeID(`id=${recipe.id}`);
+    let recipeID = `id=${recipe.id}`;
     return (
       <div className={styles.randomRecipe}>
         <div className={styles.recipeDetail}>
