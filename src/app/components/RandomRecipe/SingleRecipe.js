@@ -10,6 +10,8 @@ import Link from 'next/link';
 import { db } from '../../services/Firebase';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { Toast } from 'primereact/toast';
+import {options} from "../api/SpoonacularAPI"
+
 
 export const SingleRecipe = () => {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
@@ -72,14 +74,6 @@ export const SingleRecipe = () => {
         life: 4500,
       });
     }
-  };
-
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'b1fda73e9emsh70026538b9aaba3p10ebbejsnfb187dbbd62b',
-      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-    },
   };
 
   const fetchRecipeID = async () => {
