@@ -49,15 +49,15 @@ export const Login = () => {
       };
 
     return (
-        <div className={classNames("m-5 w-auto p-5 border-round-lg w-3", styles.formCard)}>
+        <div className={classNames("w-4 w-auto p-5 border-round-lg  border-round-lg  ", styles.formCard)}>
                   <Toast ref={toast} />
         <h2 className='font-bold py-2'>Log-in</h2>
             <form className="flex flex-column gap-2" onSubmit={handleLogin}>
           <div className="py-3">
-          <label htmlFor="email" className="p3">Email</label>
+          <label htmlFor="email" className="py-2">Email</label>
           <InputText
             id="email"
-            className='p-2  border-2 border-solid border-round-md w-full flex  hover:border-200'
+            className='mb-4 border-2 border-solid border-round-md w-full flex  hover:border-200'
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -77,8 +77,7 @@ export const Login = () => {
         </div>
         <div className="p-field-checkbox py-2">
           <Checkbox
-                    className='ml-5'
-
+            className='ml-1'
             inputId="rememberMe"
             checked={rememberMe}
             onChange={(e) => setRememberMe(e.checked)}
