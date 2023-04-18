@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+import {options} from "../api/SpoonacularAPI"
+
 import { Carousel } from "primereact/carousel";
 import { Button } from "primereact/button";
 import { classNames } from "primereact/utils";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./SlideShow.module.css";
-import {options} from "../api/SpoonacularAPI"
+
 export const SlideShow = () => {
 
   const [recipes, setRecipes] = useState([]);
