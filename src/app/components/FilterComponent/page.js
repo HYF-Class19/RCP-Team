@@ -41,10 +41,10 @@ export default function Home() {
     <>
       <div>
         <h2>
-          <Link href="#">HOME</Link> {'>'} Recipes
+          <Link href="#">Home</Link> {'>'} Recipes
         </h2>
       </div>
-      <div className="filter-showcase">
+      <div className="flex flex-wrap justify-content-center">
         <Filter setSearchNewRecipes={setSearchNewRecipes} />
         <ShowRecipes
           ingredientsData={ingredientsData}
