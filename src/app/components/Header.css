@@ -21,8 +21,7 @@
 
 .btn-group {
   display: flex;
-  width: 292px;
-  justify-content: space-between;
+  width: 125px;
 }
 
 .add-recipe {
@@ -69,6 +68,7 @@
   border-radius: 10px;
 }
 
+
 /* MOBILE RESPONSIVENESS */
 @media only screen and (max-width: 767.98px) {
   .header {
@@ -80,16 +80,9 @@
     height: 74px;
   }
 
-  .header h1 {
-    position: absolute;
-    font-size: 26px;
-    left: 22%;
-    right: 5%;
-    top: 75%;
-  }
-
   .btn-group {
-    width: 163px;
+    justify-content: space-between;
+
   }
 
   .add-recipe {
@@ -104,5 +97,9 @@
   .sign-in {
     width: 78.84px;
     height: 35.9px;
+  }
+
+  .slogan{
+    display: none;
   }
 }
