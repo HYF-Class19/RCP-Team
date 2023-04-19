@@ -1,0 +1,24 @@
+.recipe-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 42px;
+  padding: 20px;
+  max-width: 1300px;
+  min-height: 600px;
+  align-items: flex-start;
+}
+
+.pages {
+  max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .recipe-display {
+    padding: 0;
+    gap: 20px;
+  }
+
+  .pages {
+    padding: 15px 0;
+  }
+}
