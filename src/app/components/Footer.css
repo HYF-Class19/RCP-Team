@@ -24,13 +24,16 @@
   background-color: #e7b10a;
 }
 
-@media only screen and (max-width: 600px) {
+/* MOBILE RESPONSIVENESS */
+@media only screen and (max-width: 767.98px) {
   .footer {
     display: block;
+    height: 130px;
+    padding-top: 5px;
   }
 
   .buttons {
-    margin: 10px;
+    margin: 15px;
     justify-content: center;
   }
 

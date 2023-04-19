@@ -24,13 +24,19 @@ export const Footer = () => {
       </div>
       <div className="align-content-end  flex gap-4 align-self-center icons">
         <a href="https://fr-fr.facebook.com/">
-          <i className="pi pi-facebook iconStyle" />
+          <i className="pi pi-facebook iconStyle"
+             style={{ color: 'black', fontSize: '30px' }}
+             />
         </a>
         <a href="https://www.instagram.com/">
-          <i className="pi pi-instagram iconStyle" />
+          <i className="pi pi-instagram iconStyle" 
+           style={{ color: 'black', fontSize: '30px' }}
+          />
         </a>
         <a href="https://twitter.com/?lang=fr">
-          <i className="pi pi-twitter iconStyle" />
+          <i className="pi pi-twitter iconStyle"
+             style={{ color: 'black', fontSize: '30px' }}
+             />
         </a>
       </div>
     </div>
