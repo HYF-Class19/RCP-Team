@@ -10,7 +10,7 @@
   color: black;
 }
 
-@media (min-width: 800px) and (max-width: 1400px) {
+@media (min-width: 1000px) and (max-width: 1400px) {
   #media {
     flex-wrap: nowrap
     !important;
