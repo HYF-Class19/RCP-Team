@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ShowRecipes.css';
 import { RecipeCard } from './RecipeCard';
 import { Paginate } from './Paginate';
-import {options} from "../../services/Spoonacular"
+import { options } from '../../services/Spoonacular';
 
 // example for the complex filter for the future
 const diet = {};
@@ -14,7 +14,7 @@ export const ShowRecipes = ({
   menuOriginData,
 }) => {
   const [recipes, setRecipes] = useState([]);
-  let url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&cuisine=chinese&number=45&diet=${diet}`;
+  let url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&cuisine=european,french,american&number=45&diet=${diet}`;
 
   if (menuOriginData) {
     console.log('we have a menu now');
