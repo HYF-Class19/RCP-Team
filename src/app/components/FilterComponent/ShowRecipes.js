@@ -29,8 +29,6 @@ export const ShowRecipes = ({
   const [postsPerPage] = useState(9);
 
   useEffect(() => {
-    console.log(url);
-
     // FETCH INITIAL RECIPE RESULTS WILL BE RECIPES WITH A SPECIFIC ID
     const fetchRecipes = async (url) => {
       let detailedRecipes = [];

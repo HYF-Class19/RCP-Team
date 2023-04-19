@@ -12,7 +12,6 @@ export default function Home() {
           <Link href="../../">Home</Link> {'>'} Favorite Recipes
         </h2>
         <Image
-          // class="border-round-3xl"
           className="favorite-image"
           src={favorite}
           alt="Image"

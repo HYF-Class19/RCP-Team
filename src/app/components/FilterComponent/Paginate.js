@@ -3,10 +3,8 @@ import './Paginate.css';
 export const Paginate = ({
   postsPerPage,
   totalPosts,
-  paginate,
   nextPage,
   previousPage,
-  currentPage,
 }) => {
   const pageNumbers = [];
 
@@ -20,17 +18,6 @@ export const Paginate = ({
         <li onClick={previousPage} className="page-number">
           Prev
         </li>
-        {/* {pageNumbers.map((number) => (
-          <li
-            key={number}
-            onClick={() => paginate(number)}
-            className={
-              'page-number ' + (number === currentPage ? 'active' : '')
-            }
-          >
-            {number}
-          </li>
-        ))} */}
         <li onClick={nextPage} className="page-number">
           Next
         </li>

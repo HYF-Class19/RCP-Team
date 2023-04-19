@@ -15,27 +15,22 @@ export const Header = () => {
         <Image src={logo} alt="logo" width={202} />
       </Link>
 
-      <h1 className='slogan'>I want to choose a recipe by...</h1>
+      <h1 className="slogan">I want to choose a recipe by...</h1>
       <div className="btn-group">
-       {/* <button className="add-recipe">
+        <Link
+          href="/components/Favorites"
+          className="justify-content-center p-3"
+        >
           <i
-            className="pi pi-plus-circle"
-            style={{ color: 'white', fontSize: '25px' }}
+            className="pi pi-heart-fill"
+            style={{ color: 'black', fontSize: '35px' }}
           ></i>
-          <p>Add recipe</p>
-        </button>
-      */}
-        <Link href="/components/Favorites" className='justify-content-center p-3'>
-        <i
-              className="pi pi-heart-fill"
-              style={{ color: 'black', fontSize: '35px' }}
-            ></i>
-            </Link>
-            <Link href="/account" className='justify-content-center p-3'>
-            <i
-              className="pi pi-user"
-              style={{ color: 'black', fontSize: '35px' }}
-            ></i>
+        </Link>
+        <Link href="/account" className="justify-content-center p-3">
+          <i
+            className="pi pi-user"
+            style={{ color: 'black', fontSize: '35px' }}
+          ></i>
         </Link>
       </div>
     </div>

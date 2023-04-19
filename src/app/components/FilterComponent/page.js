@@ -1,15 +1,10 @@
-"use client";
-import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
-
-// css import
-import "./page.css";
-
-// components import
-
-import { Filter } from "./Filter";
-import { ShowRecipes } from "./ShowRecipes";
+'use client';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import './page.css';
+import { Filter } from './Filter';
+import { ShowRecipes } from './ShowRecipes';
 
 export default function Home() {
   const getId = useSearchParams();
@@ -20,13 +15,13 @@ export default function Home() {
   const [menuOriginData, setMenuOrigin] = useState();
 
   useEffect(() => {
-    setIngredientsData([getId.get("ingredientsData")]);
-    setExcludeIngredientsData([getId.get("excludeIngredientsData")]);
+    setIngredientsData([getId.get('ingredientsData')]);
+    setExcludeIngredientsData([getId.get('excludeIngredientsData')]);
     setDietsData({
-      diets: [getId.get("dietsData")],
+      diets: [getId.get('dietsData')],
     });
     setMenuOrigin({
-      menus: [getId.get("menuOriginData")],
+      menus: [getId.get('menuOriginData')],
     });
   }, [getId]);
 
@@ -36,7 +31,6 @@ export default function Home() {
     selectedDiets,
     selectedMenus
   ) => {
-    console.log("button pressed");
     setIngredientsData(includeIngredients);
     setExcludeIngredientsData(excludedIngredients);
     setDietsData(selectedDiets);
@@ -47,7 +41,7 @@ export default function Home() {
     <>
       <div>
         <h2>
-          <Link href="#">HOME</Link> {">"} Recipes
+          <Link href="#">HOME</Link> {'>'} Recipes
         </h2>
       </div>
       <div className="filter-showcase">
