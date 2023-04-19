@@ -1,3 +1,4 @@
+'use client';
 import { RecipeCard } from './RecipeCard';
 import Link from 'next/link';
 import './page.css';
@@ -15,7 +16,7 @@ export default function Home() {
           className="favorite-image"
           src={favorite}
           alt="Image"
-          width={1300}
+          width={1400}
           height={300}
         />
       </div>
