@@ -10,14 +10,13 @@
   color: black;
 }
 
-.filter-showcase {
-  display: flex;
-}
 h2 {
   font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
   font-size: 30px;
-  font-weight: lighter;
-  padding: 50px 118px;
+  padding-top: 50px;
+  padding-left: 120px;
+
 }
 
 h2 a {
