@@ -5,12 +5,12 @@
   font-weight: 400;
   color: black;
   background-color: #d9d9d9;
-  width: 420px;
+  width: 400px;
   height: auto;
   margin-left: 82px;
   margin-top: 123px;
   margin-bottom: 188px;
-  padding-left: 42px;
+  padding-left: 30px;
   border-radius: 20px;
   padding-bottom: 30px;
 }
@@ -22,14 +22,14 @@
 .filter-titles h1 {
   font-weight: 500;
   font-size: 30px;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .filter-titles h2 {
   font-weight: 400;
   font-size: 26px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
 
 .filter .btn-filter {
@@ -45,4 +45,19 @@
 
 .filter .btn-filter:hover {
   background-color: #e7b10a;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 767.98px) {
+
+  .filter {
+    width: 390px;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 123px;
+    margin-bottom: 0;
+    padding-left: 10;
+    border-radius:0;
+    padding-bottom: 30px;
+  }
 }

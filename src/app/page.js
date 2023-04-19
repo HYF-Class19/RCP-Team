@@ -38,7 +38,7 @@ export default function Home() {
     <>
 
       <SlideShow />
-      <div className="filter-showcase">
+      <div className="flex flex-wrap justify-content-center ">
         <Filter setSearchNewRecipes={setSearchNewRecipes} />
         <ShowRecipes
           ingredientsData={ingredientsData}
