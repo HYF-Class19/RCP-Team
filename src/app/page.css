@@ -9,3 +9,12 @@
   background-color: white;
   color: black;
 }
+
+@media (min-width: 800px) and (max-width: 1400px) {
+  #media {
+    flex-wrap: nowrap
+    !important;
+    flex-direction: start
+    !important;
+  }
+}
