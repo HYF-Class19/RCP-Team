@@ -15,9 +15,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 42px;
+  gap: 30px;
 }
 
 .show-pages {
-  padding: 20px;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 767.98px) {
+  .show-recipes {
+    margin-top: 70px;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
 }

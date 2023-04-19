@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { options } from "../../services/Spoonacular";
-import { SingleRecipe } from "../SingleRecipe/SingleRecipe";
+import { useState, useEffect } from 'react';
+import { options } from '../../services/Spoonacular';
+import { SingleRecipe } from '../SingleRecipe/SingleRecipe';
 
 // import Link from "next/link";
 
@@ -16,7 +16,6 @@ export default function Home() {
     const data = await response.json();
     const recipe = data.recipes;
     const singleRecipe = recipe[0];
-    console.log(singleRecipe.id);
     setRecipeID(singleRecipe.id);
   };
 
