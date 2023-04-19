@@ -41,3 +41,21 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 1050px) {
+  .footer {
+    display: block;
+    height: 130px;
+    padding-top: 5px;
+  }
+
+  .buttons {
+    margin: 15px;
+    justify-content: center;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+}
+  

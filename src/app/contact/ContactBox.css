@@ -18,7 +18,7 @@
     
 .breadcrumb-item{
     display: inline;
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 500;
 }
   
@@ -30,7 +30,7 @@
 }
   
 .breadcrumb-item a{
-    color: #2e4053;
+    color: black;
     text-decoration: none;
 }
   
@@ -55,15 +55,21 @@
     }
     .imgcontact {
       display: block;
+      justify-content: center;
       height: 200px;
-      width: 330px;
-      margin: 0 10%;
+      width: 100%;
+      margin: 0 3%;
     }
     .breadcrumb {
       display: block;
       margin: auto;
     }
+
+    .breadcrumb-item{
+      font-size: 23px;
+  }
   }
 
   
 
+ 
