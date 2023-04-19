@@ -39,23 +39,32 @@ export const Filter = ({ setSearchNewRecipes }) => {
     );
   };
 
+  const [showFilter, setShowFilter] = useState(true);
+  
+    function handleToggle() {
+      setShowFilter(!showFilter);
+    }
+
   return (
-    <div className="filter">
-      <div className="filter-titles">
-        <h1>Filter my recipe...</h1>
-        <h2>Ingredients</h2>
-      </div>
-      <div className="select-ingredients">
-        <IncludeIngredients callbackIngredients={getIngredients} />
-        <ExcludeIngredients callbackExcluded={getExcludedIngredients} />
-        <MenuOrigin callbackMenu={getMenus} />
-        <Dietary callbackDiets={getDiets} />
-      </div>
-      <Button
-        onClick={() => handleClick()}
-        label="Search"
-        className="btn-filter"
-      />
+<div>
+      <Button onClick={handleToggle}
+       label={showFilter ? "Hide the Filter" : "Filter the recipes"} 
+       className='show-filter'/>
+      {showFilter && (
+        <div className="filter">
+          <div className="filter-titles">
+            <h1>Filter my recipe...</h1>
+            <h2>Ingredients</h2>
+          </div>
+          <div className="select-ingredients">
+            <IncludeIngredients callbackIngredients={getIngredients} />
+            <ExcludeIngredients callbackExcluded={getExcludedIngredients} />
+            <MenuOrigin callbackMenu={getMenus} />
+            <Dietary callbackDiets={getDiets} />
+          </div>
+          <Button onClick={() => handleClick()} label="Search" className="btn-filter" />
+        </div>
+      )}
     </div>
   );
-};
+}
