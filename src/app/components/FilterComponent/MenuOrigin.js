@@ -86,6 +86,36 @@ export const MenuOrigin = ({ callbackMenu }) => {
           />
           <label for="italian">Italian</label>
         </div>
+        <div>
+          <input
+            type="checkbox"
+            id="mediterranean"
+            name="origin"
+            value="mediterranean"
+            onChange={handleMenuChange}
+          />
+          <label for="mediterranean">Mediterranean</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="french"
+            name="origin"
+            value="french"
+            onChange={handleMenuChange}
+          />
+          <label for="french">French</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="mexican"
+            name="origin"
+            value="mexican"
+            onChange={handleMenuChange}
+          />
+          <label for="mexican">Mexican</label>
+        </div>
       </div>
     </div>
   );
