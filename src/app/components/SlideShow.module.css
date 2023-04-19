@@ -12,9 +12,8 @@
   color: #fff;
   font-style: normal;
   font-size: 26px;
-  /* line-height: 30px; */
   font-weight: 700;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
 }
 
 .recipeDetail .recipeButton {
@@ -28,4 +27,3 @@
 .recipeButton .recipeDetail :hover {
   background-color: #e7b10a;
 }
-

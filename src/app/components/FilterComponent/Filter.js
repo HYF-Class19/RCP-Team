@@ -7,13 +7,7 @@ import { IncludeIngredients } from './IncludeIngredients';
 import { MenuOrigin } from './MenuOrigin';
 import { Button } from 'primereact/button';
 
-export const Filter = ({
-  getIngredientData,
-  excludedData,
-  getDietsData,
-  getMenuData,
-  setSearchNewRecipes,
-}) => {
+export const Filter = ({ setSearchNewRecipes }) => {
   const [includeIngredients, setIncludeIngredients] = useState();
   const [excludedIngredients, setExcludeIngredients] = useState();
   const [selectedDiets, setSelectedDiets] = useState();
