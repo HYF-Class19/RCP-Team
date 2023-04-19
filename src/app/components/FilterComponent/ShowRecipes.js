@@ -14,7 +14,7 @@ export const ShowRecipes = ({
   menuOriginData,
 }) => {
   const [recipes, setRecipes] = useState([]);
-  let url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&cuisine=european,chinese,american&number=45&diet=${diet}`;
+  let url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?addRecipeInformation=True&cuisine=european,french,american&number=45&diet=${diet}`;
 
   if (menuOriginData) {
     console.log('we have a menu now');
