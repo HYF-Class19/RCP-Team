@@ -37,7 +37,7 @@
   background-color: #e7b10a;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1400px) {
   .recipeContainer {
     display: block;
     margin-left: 0;
@@ -50,7 +50,7 @@
   .slide {
     background: rgba(36, 80, 61, 0.7);
     margin: 0;
-    height: 650px;
+    height: 700px;
   }
 
   .recipeButton {

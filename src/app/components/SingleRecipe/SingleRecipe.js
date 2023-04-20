@@ -154,7 +154,7 @@ export const SingleRecipe = (props) => {
               <p>Rate</p>
               <UpdateRating dishId={recipe.id} />
             </div>
-            <div className="rating" onClick={() => createFavorites()}>
+            <div className="rating rateFav" onClick={() => createFavorites()}>
               <p>Add to favorite</p>
               <div className="heart">
                 <i className="pi pi-heart-fill"></i>

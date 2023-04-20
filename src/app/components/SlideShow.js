@@ -84,6 +84,7 @@ export const SlideShow = () => {
             numScroll={1}
             circular
             autoplayInterval={5000}
+            // autoplay={true}
           />
         ) : (
           <p className="flex align-content-center justify-content-center text-white">
