@@ -127,4 +127,7 @@ li {
   .rating {
     margin-bottom: 20px;
   }
+  .starRating {
+    margin: 30px 0;
+  }
 }

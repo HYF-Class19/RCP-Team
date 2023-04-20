@@ -1,17 +1,17 @@
-'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import './SingleRecipe.css';
-import Image from 'next/image';
-import alarm from '../../../../public/assets/alarm.jpeg';
-import people from '../../../../public/assets/people.jpeg';
-import Link from 'next/link';
-import { ShowRating } from './ShowRating';
-import { UpdateRating } from './UpdateRating';
-import 'primeicons/primeicons.css';
-import { db } from '../../services/Firebase';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
-import { Toast } from 'primereact/toast';
-import { options } from '../../services/Spoonacular';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import "./SingleRecipe.css";
+import Image from "next/image";
+import alarm from "../../../../public/assets/alarm.jpeg";
+import people from "../../../../public/assets/people.jpeg";
+import Link from "next/link";
+import { ShowRating } from "./ShowRating";
+import { UpdateRating } from "./UpdateRating";
+import "primeicons/primeicons.css";
+import { db } from "../../services/Firebase";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { Toast } from "primereact/toast";
+import { options } from "../../services/Spoonacular";
 
 export const SingleRecipe = (props) => {
   const [checkFavorites, setCheckFavorites] = useState([]);
@@ -24,7 +24,7 @@ export const SingleRecipe = (props) => {
   const toast = useRef(null);
   const [version, setVersion] = useState(1);
 
-  const favoritesCollectionRef = collection(db, 'favorites');
+  const favoritesCollectionRef = collection(db, "favorites");
 
   useEffect(() => {
     const getFavoriteRecipes = async () => {
@@ -59,17 +59,17 @@ export const SingleRecipe = (props) => {
         recipeID: recipeId,
       });
       toast.current.show({
-        severity: 'success',
-        summary: 'Success',
-        detail: 'Recipe added to Favorites',
+        severity: "success",
+        summary: "Success",
+        detail: "Recipe added to Favorites",
         life: 3000,
       });
       setVersion(version + 1);
     } else {
       toast.current.show({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'Recipe already exists! Please select another recipe',
+        severity: "error",
+        summary: "Error",
+        detail: "Recipe already exists! Please select another recipe",
         life: 4500,
       });
     }
@@ -118,14 +118,14 @@ export const SingleRecipe = (props) => {
         <div>
           <Toast ref={toast} />
           <h2>
-            <Link href="#">HOME</Link> {'>'} Dish Recipe
+            <Link href="#">HOME</Link> {">"} Dish Recipe
           </h2>
         </div>
         <div className="singleRecipe">
           <p className="dishName fontStyle">{recipe.title}</p>
           <div className="dishInfo">
             <ShowRating dishId={recipe.id} />
-            <div className="flex gap-3 align-items-center">
+            <div className="flex gap-3 align-items-center starRating">
               <Image src={alarm} alt="time" width={40} height={40} />
               <p>{recipe.readyInMinutes} min</p>
             </div>
