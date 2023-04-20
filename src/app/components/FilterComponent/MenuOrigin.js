@@ -34,7 +34,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
             value="african"
             onChange={handleMenuChange}
           />
-          <label for="african">African</label>
+          <label htmlFor="african">African</label>
         </div>
         <div>
           <input
@@ -44,7 +44,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
             value="american"
             onChange={handleMenuChange}
           />
-          <label for="american">American</label>
+          <label htmlFor="american">American</label>
         </div>
         <div>
           <input
@@ -54,7 +54,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
             value="chinese"
             onChange={handleMenuChange}
           />
-          <label for="chinese">Chinese</label>
+          <label htmlFor="chinese">Chinese</label>
         </div>
         <div>
           <input
@@ -64,7 +64,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
             value="european"
             onChange={handleMenuChange}
           />
-          <label for="european">European</label>
+          <label htmlFor="european">European</label>
         </div>
         <div>
           <input
@@ -74,7 +74,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
             value="indian"
             onChange={handleMenuChange}
           />
-          <label for="indian">Indian</label>
+          <label htmlFor="indian">Indian</label>
         </div>
         <div>
           <input
@@ -84,7 +84,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
             value="italian"
             onChange={handleMenuChange}
           />
-          <label for="italian">Italian</label>
+          <label htmlFor="italian">Italian</label>
         </div>
         <div>
           <input
@@ -94,7 +94,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
             value="mediterranean"
             onChange={handleMenuChange}
           />
-          <label for="mediterranean">Mediterranean</label>
+          <label htmlFor="mediterranean">Mediterranean</label>
         </div>
         <div>
           <input
@@ -104,7 +104,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
             value="french"
             onChange={handleMenuChange}
           />
-          <label for="french">French</label>
+          <label htmlFor="french">French</label>
         </div>
         <div>
           <input
@@ -114,7 +114,7 @@ export const MenuOrigin = ({ callbackMenu }) => {
             value="mexican"
             onChange={handleMenuChange}
           />
-          <label for="mexican">Mexican</label>
+          <label htmlFor="mexican">Mexican</label>
         </div>
       </div>
     </div>
