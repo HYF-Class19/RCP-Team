@@ -23,6 +23,8 @@ export const SingleRecipe = (props) => {
   const [recipeImage, setRecipeImage] = useState();
   const toast = useRef(null);
   const [version, setVersion] = useState(1);
+  const [ratingCollection, setRatingCollection] = useState([]);
+  const usersCollectionRef = collection(db, "rating");
 
   const favoritesCollectionRef = collection(db, "favorites");
 
@@ -34,8 +36,15 @@ export const SingleRecipe = (props) => {
       );
     };
 
+    const getRating = async () => {
+      const data = await getDocs(usersCollectionRef);
+      const dataArr = data.docs.map((doc) => ({ ...doc.data() }));
+      setRatingCollection(dataArr);
+    };
+
     getFavoriteRecipes();
-  }, [version]);
+    getRating();
+  }, []);
 
   const createFavorites = async () => {
     const checkDuplicate = {
@@ -124,7 +133,10 @@ export const SingleRecipe = (props) => {
         <div className="singleRecipe">
           <p className="dishName fontStyle">{recipe.title}</p>
           <div className="dishInfo">
-            <ShowRating dishId={recipe.id} />
+            <ShowRating
+              dishId={recipe.id}
+              ratingCollection={ratingCollection}
+            />
             <div className="flex gap-3 align-items-center starRating">
               <Image src={alarm} alt="time" width={40} height={40} />
               <p>{recipe.readyInMinutes} min</p>
@@ -152,7 +164,10 @@ export const SingleRecipe = (props) => {
           <div className="rateSection">
             <div className="rating">
               <p>Rate</p>
-              <UpdateRating dishId={recipe.id} />
+              <UpdateRating
+                dishId={recipe.id}
+                ratingCollection={ratingCollection}
+              />
             </div>
             <div className="rating rateFav" onClick={() => createFavorites()}>
               <p>Add to favorite</p>

@@ -9,6 +9,7 @@ import axios from "axios";
 export const UpdateRating = (props) => {
   const [rating, setRating] = useState(0);
   const [userIp, setUserIP] = useState("");
+  const ratingCollection = props.ratingCollection;
 
   const usersCollectionRef = collection(db, "rating");
   useEffect(() => {
@@ -17,15 +18,13 @@ export const UpdateRating = (props) => {
       setUserIP(res.data.ip);
     };
 
-    const userRating = async () => {
-      const data = await getDocs(usersCollectionRef);
-      const dataArr = data.docs.map((doc) => ({ ...doc.data() }));
+    const userRating = (ratingCollection) => {
       let totalRating = 0;
       let ratingCount = 0;
-      if (dataArr.length > 0) {
-        for (let i = 0; i < dataArr.length; i++) {
-          if (dataArr[i].productId == props.dishId) {
-            totalRating += dataArr[i].rating;
+      if (ratingCollection.length > 0) {
+        for (let i = 0; i < ratingCollection.length; i++) {
+          if (ratingCollection[i].productId == props.dishId) {
+            totalRating += ratingCollection[i].rating;
             ratingCount++;
           }
         }
@@ -37,19 +36,17 @@ export const UpdateRating = (props) => {
     };
 
     getData();
-    userRating();
-  }, [userIp, props.dishId, usersCollectionRef]);
+    userRating(ratingCollection);
+  }, [userIp, props.dishId, usersCollectionRef, ratingCollection]);
 
-  const getRating = async () => {
-    const data = await getDocs(usersCollectionRef);
-    const dataArr = data.docs.map((doc) => ({ ...doc.data() }));
+  const getRating = (ratingCollection) => {
     let userFlag = true;
 
-    if (dataArr.length > 0) {
-      for (let i = 0; i < dataArr.length; i++) {
+    if (ratingCollection.length > 0) {
+      for (let i = 0; i < ratingCollection.length; i++) {
         if (
-          dataArr[i].userId == userIp &&
-          dataArr[i].productId == props.dishId
+          ratingCollection[i].userId == userIp &&
+          ratingCollection[i].productId == props.dishId
         ) {
           userFlag = false;
           setRating(rating);
@@ -59,7 +56,7 @@ export const UpdateRating = (props) => {
     return userFlag;
   };
   const updateRating = async (rating) => {
-    let updateFlag = await getRating();
+    let updateFlag = getRating(ratingCollection);
     if (updateFlag) {
       await addDoc(usersCollectionRef, {
         productId: props.dishId,

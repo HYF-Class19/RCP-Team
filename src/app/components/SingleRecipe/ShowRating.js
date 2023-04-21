@@ -7,16 +7,17 @@ import { collection, getDocs } from "firebase/firestore";
 
 export const ShowRating = (props) => {
   const [rating, setRating] = useState(0);
-  const usersCollectionRef = collection(db, "rating");
-  const getRating = async () => {
-    const data = await getDocs(usersCollectionRef);
-    const dataArr = data.docs.map((doc) => ({ ...doc.data() }));
+  const ratingCollection = props.ratingCollection;
+
+  const getRating = (ratingCollection) => {
     let totalRating = 0;
     let ratingCount = 0;
-    if (dataArr.length > 0) {
-      for (let i = 0; i < dataArr.length; i++) {
-        if (dataArr[i].productId == props.dishId) {
-          totalRating += dataArr[i].rating;
+    console.log(ratingCollection);
+    console.log(typeof ratingCollection);
+    if (ratingCollection.length > 0) {
+      for (let i = 0; i < ratingCollection.length; i++) {
+        if (ratingCollection[i].productId == ratingCollection.dishId) {
+          totalRating += ratingCollection[i].rating;
           ratingCount++;
         }
       }
@@ -27,8 +28,8 @@ export const ShowRating = (props) => {
     }
   };
   useEffect(() => {
-    getRating();
-  }, []);
+    getRating(ratingCollection);
+  }, [ratingCollection]);
 
   return (
     <div>
