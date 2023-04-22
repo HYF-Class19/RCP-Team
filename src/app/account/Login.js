@@ -37,9 +37,6 @@ export const Login = ( ) => {
 
           if (rememberMe) {
             localStorage.setItem("rememberMe", "true");
-            localStorage.setItem("isAuth", "true");
-            localStorage.setItem("email", email);
-            localStorage.setItem("uid", uid);
           } else {
             localStorage.removeItem("rememberMe");
           }
@@ -49,6 +46,9 @@ export const Login = ( ) => {
             detail: "Logged in successfully",
             life: 3000,
           });
+          localStorage.setItem("isAuth", "true");
+          localStorage.setItem("email", email);
+          localStorage.setItem("uid", uid);
           setIsAuth("true");
           setUserId(uid);
           window.location.pathname = "../components/Favorites";
