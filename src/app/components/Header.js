@@ -11,21 +11,18 @@ import { Button } from "primereact/button";
 
 
 export const Header = () => {
-  if (!localStorage.getItem("isAuth")) {
-    localStorage.setItem("isAuth", "false");
-  }
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
+  
+/*
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.setItem("isAuth", "false");
       setIsAuth("false");
       window.location.pathname = "/account";
-      const john = isAuth;
-      console.log(john);
     });
   };
-  
+  */
 const redirectAccount = () =>{
   window.location.pathname = "/account";
 }
@@ -53,7 +50,7 @@ const redirectAccount = () =>{
             style={{ color: 'black', fontSize: '35px' }}
           ></i>
           </Link>
-        <Button onClick={signUserOut} className="justify-content-center p-3 bg-white border-none">
+        <Button className="justify-content-center p-3 bg-white border-none">
         <li
           className="pi pi-sign-out"
           style={{ color: 'black', fontSize: '35px' }}
