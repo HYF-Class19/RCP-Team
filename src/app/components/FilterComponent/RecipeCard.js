@@ -10,7 +10,7 @@ export const RecipeCard = ({ recipes, loading }) => {
         <h2>Fetching recipes ...</h2>
       ) : (
         recipes.map((item) => {
-          console.log(`id=${item.id}`);
+          //console.log(`id=${item.id}`);
           return (
             <>
               <div className="single-recipe" key={uuidv4()}>

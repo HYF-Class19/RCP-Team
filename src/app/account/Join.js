@@ -45,7 +45,7 @@ export const Join = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       const uid = user.uid;
-      console.log("User registered:", user.email);
+      //console.log("User registered:", user.email);
       // Add additional user data to Firestore
       const userRef = doc(db, "users", userCredential.user.uid);
       setDoc(userRef, {
@@ -58,7 +58,7 @@ export const Join = () => {
       localStorage.setItem("uid", uid);
       window.location.pathname = "../components/Favorites";
     } catch (error) {
-      console.error("Error registering user:", error);
+      //console.error("Error registering user:", error);
       toast.current.show({ severity: "error", summary: "Error", detail: error.message });
     }
      toast.current.show({
