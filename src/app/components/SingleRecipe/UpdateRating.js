@@ -57,6 +57,7 @@ export const UpdateRating = (props) => {
   };
   const updateRating = async (rating) => {
     let updateFlag = getRating(ratingCollection);
+
     if (updateFlag) {
       await addDoc(usersCollectionRef, {
         productId: props.dishId,
@@ -64,7 +65,7 @@ export const UpdateRating = (props) => {
         userId: userIp,
       });
 
-      setRating(rating);
+      window.location.reload(true);
     }
   };
 
