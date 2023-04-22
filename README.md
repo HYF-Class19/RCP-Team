@@ -74,3 +74,4 @@ In the coming weeks the rest will be added.
 - `npm i uuid`
 - `npm i primeflex`
 - `npm install firebase`
+- `npm i axios`

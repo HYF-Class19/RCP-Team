@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../services/Firebase";
-
+import { v4 as uuidv4 } from 'uuid';
 import { InputText } from "primereact/inputtext";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
@@ -51,6 +51,7 @@ export const Login = ( ) => {
           });
           setIsAuth("true");
           setUserId(uid);
+          window.location.pathname = "../components/Favorites";
         } catch (error) {
           toast.current.show({
             severity: "error",
@@ -75,6 +76,7 @@ export const Login = ( ) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            key={uuidv4()}
           />
         </div>
         <div className="py-3">
