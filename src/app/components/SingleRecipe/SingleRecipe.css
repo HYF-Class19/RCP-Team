@@ -102,7 +102,7 @@ li {
   color: green;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1400px) {
   .ingStyle {
     display: block;
   }
@@ -126,5 +126,14 @@ li {
   }
   .rating {
     margin-bottom: 20px;
+    width: 170px;
+    gap: 5px;
+  }
+  .rateFav {
+    gap: 20px;
+    display: flex;
+  }
+  .starRating {
+    margin: 30px 0;
   }
 }
