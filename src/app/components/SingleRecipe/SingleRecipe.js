@@ -147,7 +147,7 @@ export const SingleRecipe = (props) => {
               <p>{recipe.readyInMinutes} min</p>
             </div>
             <div className="flex gap-3 align-items-center">
-            <i className="pi pi-users"style={{ color: 'black', fontSize: '30px' }}></i>
+            <i className="pi pi-users"style={{ color: 'var(--primary-color)', fontSize: '30px' }}></i>
               <p>{recipe.servings} persons</p>
             </div>
           </div>
