@@ -48,7 +48,6 @@ export const SingleRecipe = (props) => {
       const dataArr = data.docs.map((doc) => ({ ...doc.data() }));
       setRatingCollection(dataArr);
     };
-
     getFavoriteRecipes();
     getRating();
   }, []);
@@ -64,7 +63,7 @@ export const SingleRecipe = (props) => {
     };
 
     const duplicateObject = checkFavorites.some(
-      (obj) => obj.recipeID === checkDuplicate.recipeID
+      (obj) => obj.recipeID === checkDuplicate.recipeID && obj.userId === userId
     );
 
     if (!duplicateObject) {
