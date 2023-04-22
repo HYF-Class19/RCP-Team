@@ -2,12 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./SingleRecipe.css";
 import Image from "next/image";
-import alarm from "../../../../public/assets/alarm.jpeg";
-import people from "../../../../public/assets/people.jpeg";
 import Link from "next/link";
 import { ShowRating } from "./ShowRating";
 import { UpdateRating } from "./UpdateRating";
-import "primeicons/primeicons.css";
 import { db } from "../../services/Firebase";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { Toast } from "primereact/toast";
@@ -135,7 +132,7 @@ export const SingleRecipe = (props) => {
         <div>
           <Toast ref={toast} />
           <h2>
-            <Link href="#">HOME</Link> {">"} Dish Recipe
+            <Link href="#">Home</Link> {">"} Dish recipe
           </h2>
         </div>
         <div className="singleRecipe">
@@ -146,11 +143,11 @@ export const SingleRecipe = (props) => {
               ratingCollection={ratingCollection}
             />
             <div className="flex gap-3 align-items-center starRating">
-              <Image src={alarm} alt="time" width={40} height={40} />
+              <i className="pi  pi-hourglass"style={{ color: 'var(--primary-color)', fontSize: '30px' }}></i>
               <p>{recipe.readyInMinutes} min</p>
             </div>
             <div className="flex gap-3 align-items-center">
-              <Image src={people} alt="people" width={40} height={40} />
+            <i className="pi pi-users"style={{ color: 'black', fontSize: '30px' }}></i>
               <p>{recipe.servings} persons</p>
             </div>
           </div>
