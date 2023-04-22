@@ -25,8 +25,15 @@ export const SingleRecipe = (props) => {
   const [version, setVersion] = useState(1);
   const [ratingCollection, setRatingCollection] = useState([]);
   const usersCollectionRef = collection(db, "rating");
+  const [userId, setUserId] = useState("")
 
   const favoritesCollectionRef = collection(db, "favorites");
+  
+  useEffect(() => {
+    const uid = localStorage.getItem("uid");
+    setUserId(uid);
+  }, []);
+
 
   useEffect(() => {
     const getFavoriteRecipes = async () => {
@@ -48,6 +55,7 @@ export const SingleRecipe = (props) => {
 
   const createFavorites = async () => {
     const checkDuplicate = {
+      userId: userId,
       image: recipeImage,
       servings: recipeServings,
       time: recipeTime,
@@ -61,6 +69,7 @@ export const SingleRecipe = (props) => {
 
     if (!duplicateObject) {
       await addDoc(favoritesCollectionRef, {
+        userId: userId,
         image: recipeImage,
         servings: recipeServings,
         time: recipeTime,
