@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../services/Firebase";
@@ -12,32 +12,45 @@ import { Toast } from "primereact/toast";
 import styles from "./Account.module.css";
 import { classNames } from "primereact/utils";
 
-export const Login = () => {
+export const Login = ( ) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [rememberMe, setRememberMe] = useState(false);
+    const [isAuth, setIsAuth] = useState(false);
+    const [userId, setUserId] = useState("")
+
     const toast = useRef(null);
+
+    useEffect(() => {
+      const isAuth = localStorage.getItem("isAuth");
+      if (isAuth === "true") {
+        window.location.pathname = "../components/Favorites";
+      }
+    }, []);
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-          await signInWithEmailAndPassword(auth, email, password);
+          const { user } = await signInWithEmailAndPassword(auth, email, password);
+          const uid = user.uid;
 
           if (rememberMe) {
             localStorage.setItem("rememberMe", "true");
+            localStorage.setItem("isAuth", "true");
+            localStorage.setItem("email", email);
+            localStorage.setItem("uid", uid);
           } else {
             localStorage.removeItem("rememberMe");
           }
-
           toast.current.show({
             severity: "success",
             summary: "Success",
             detail: "Logged in successfully",
             life: 3000,
           });
-          // Redirect to Favorites
-  
+          setIsAuth("true");
+          setUserId(uid);
         } catch (error) {
           toast.current.show({
             severity: "error",
