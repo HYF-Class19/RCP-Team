@@ -1,10 +1,33 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 
 import './Header.css';
 import logo from '../../../public/assets/logo.png';
+import {auth} from "../services/Firebase"
+import { signOut } from "firebase/auth";
+import { useState } from "react";
+import { Button } from "primereact/button";
+
 
 export const Header = () => {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+
+
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+      localStorage.setItem("isAuth", "false");
+      setIsAuth("false");
+      window.location.pathname = "/account";
+      const john = isAuth;
+      console.log(john);
+    });
+  };
+  
+const redirectAccount = () =>{
+  window.location.pathname = "/account";
+}
+
   return (
     <div className="header">
       <Link
@@ -17,21 +40,33 @@ export const Header = () => {
 
       <h1 className="slogan">I want to choose a recipe by...</h1>
       <div className="btn-group">
-        <Link
+        {isAuth == "true" ? (
+          <>
+          <Link
           href="/components/Favorites"
           className="justify-content-center p-3"
-        >
+          >
           <i
             className="pi pi-heart-fill"
             style={{ color: 'black', fontSize: '35px' }}
           ></i>
-        </Link>
-        <Link href="/account" className="justify-content-center p-3">
-          <i
-            className="pi pi-user"
-            style={{ color: 'black', fontSize: '35px' }}
+          </Link>
+        <Button onClick={signUserOut} className="justify-content-center p-3 bg-white border-none">
+        <li
+          className="pi pi-sign-out"
+          style={{ color: 'black', fontSize: '35px' }}
+          ></li>
+        </Button>
+        </>
+
+      ) : (
+        <Button onClick={redirectAccount} className="justify-content-center p-3 bg-white border-none">
+          <i className="pi pi-user" 
+          style={{ color: 'black', fontSize: '35px' }}
           ></i>
-        </Link>
+        </Button>
+      )}
+
       </div>
     </div>
   );
