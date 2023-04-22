@@ -6,15 +6,20 @@ import './Header.css';
 import logo from '../../../public/assets/logo.png';
 import {auth} from "../services/Firebase"
 import { signOut } from "firebase/auth";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "primereact/button";
 
 
 export const Header = () => {
-  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const [isAuth, setIsAuth] = useState(false);
 
+  useEffect(() => {
+    const isItAuth = localStorage.getItem("isAuth");
+    setIsAuth(isItAuth);
+
+  }, []);
   
-/*
+
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.setItem("isAuth", "false");
@@ -22,7 +27,7 @@ export const Header = () => {
       window.location.pathname = "/account";
     });
   };
-  */
+
 const redirectAccount = () =>{
   window.location.pathname = "/account";
 }
@@ -50,7 +55,7 @@ const redirectAccount = () =>{
             style={{ color: 'black', fontSize: '35px' }}
           ></i>
           </Link>
-        <Button className="justify-content-center p-3 bg-white border-none">
+        <Button onClick={signUserOut} className="justify-content-center p-3 bg-white border-none">
         <li
           className="pi pi-sign-out"
           style={{ color: 'black', fontSize: '35px' }}
