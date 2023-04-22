@@ -12,11 +12,10 @@ export const ShowRating = (props) => {
   const getRating = (ratingCollection) => {
     let totalRating = 0;
     let ratingCount = 0;
-    console.log(ratingCollection);
-    console.log(typeof ratingCollection);
+
     if (ratingCollection.length > 0) {
       for (let i = 0; i < ratingCollection.length; i++) {
-        if (ratingCollection[i].productId == ratingCollection.dishId) {
+        if (ratingCollection[i].productId == props.dishId) {
           totalRating += ratingCollection[i].rating;
           ratingCount++;
         }

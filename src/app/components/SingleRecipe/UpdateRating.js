@@ -41,7 +41,7 @@ export const UpdateRating = (props) => {
 
   const getRating = (ratingCollection) => {
     let userFlag = true;
-
+    console.log("inside get rating");
     if (ratingCollection.length > 0) {
       for (let i = 0; i < ratingCollection.length; i++) {
         if (
@@ -56,7 +56,9 @@ export const UpdateRating = (props) => {
     return userFlag;
   };
   const updateRating = async (rating) => {
+    console.log("inside update rating");
     let updateFlag = getRating(ratingCollection);
+    console.log(updateFlag);
     if (updateFlag) {
       await addDoc(usersCollectionRef, {
         productId: props.dishId,
@@ -64,7 +66,7 @@ export const UpdateRating = (props) => {
         userId: userIp,
       });
 
-      setRating(rating);
+      window.location.reload(true);
     }
   };
 
