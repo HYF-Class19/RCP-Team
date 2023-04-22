@@ -12,7 +12,8 @@
   align-items: center;
   width: 100%;
   min-height: 800px;
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .page-title {
@@ -39,6 +40,10 @@ h2 a {
   font-weight: bold;
 }
 
+.recipe-display {
+  margin-left: 70px;
+}
+
 .favorites-title {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
@@ -46,11 +51,39 @@ h2 a {
   margin-top: 20px;
 }
 
-.recipe-display {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 42px;
-  padding: 40px;
-  width: 1350px;
-  min-height: 600px;
+@media (max-width: 767.98px) {
+  .page {
+    padding: 0;
+  }
+
+  .page-title {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .page-title h2 {
+    font-size: 20px;
+    margin-left: 0;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  .page-title .favorite-image {
+    width: 80%;
+    height: 100px;
+    padding: 0;
+    margin-left: 0;
+  }
+
+  .favorites-title {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .recipe-display {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
 }

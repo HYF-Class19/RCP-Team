@@ -28,8 +28,8 @@ export const SlideShow = () => {
   const itemTemplate = (recipe) => {
     let recipeID = `id=${recipe.id}`;
     return (
-      <div className="flex flex-wrap justify-content-center align-items-center my-7">
-        <div className={classNames("w-6", styles.recipeDetail)}>
+      <div className={classNames(styles.recipeContainer)}>
+        <div className={classNames(styles.recipeDetail)}>
           <h2
             className={classNames("w-full text-center p-3", styles.recipeName)}
           >
@@ -54,7 +54,7 @@ export const SlideShow = () => {
             </Button>
           </div>
         </div>
-        <div className="w-6">
+        <div>
           <Image
             className={classNames(
               "flex flex-shrink-1 border-round-lg",
@@ -64,6 +64,9 @@ export const SlideShow = () => {
             alt={recipe.title}
             width={500}
             height={300}
+            sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"
           />
         </div>
       </div>
@@ -81,6 +84,7 @@ export const SlideShow = () => {
             numScroll={1}
             circular
             autoplayInterval={5000}
+            // autoplay={true}
           />
         ) : (
           <p className="flex align-content-center justify-content-center text-white">

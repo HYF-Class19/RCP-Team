@@ -7,13 +7,22 @@
 .slide {
   background: rgba(36, 80, 61, 0.7);
 }
+.recipeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem;
+  gap: 60px;
+}
 
 .recipeDetail .recipeName {
   color: #fff;
   font-style: normal;
   font-size: 26px;
   font-weight: 700;
-  font-family: 'Ubuntu';
+  gap: 60px;
+  font-family: "Ubuntu";
 }
 
 .recipeDetail .recipeButton {
@@ -26,4 +35,25 @@
 
 .recipeButton .recipeDetail :hover {
   background-color: #e7b10a;
+}
+
+@media only screen and (max-width: 1400px) {
+  .recipeContainer {
+    display: block;
+    margin-left: 0;
+  }
+  .recipeImage {
+    width: 200px;
+    height: 200px;
+    margin: 50px 20px;
+  }
+  .slide {
+    background: rgba(36, 80, 61, 0.7);
+    margin: 0;
+    height: 700px;
+  }
+
+  .recipeButton {
+    margin-top: 40px;
+  }
 }
