@@ -18,6 +18,8 @@ export const RecipeCard = () => {
   const toast = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(8);
+  const [isAuth, setIsAuth] = useState(false);
+  const [userId, setUserId] = useState("")
 
   // HANDLE PAGINATION
   const indexOfLastPost = currentPage * postsPerPage;
@@ -54,6 +56,17 @@ export const RecipeCard = () => {
     setVersion(version + 1);
   };
 
+
+  useEffect(() => {
+    const isItAuth = localStorage.getItem("isAuth");
+    setIsAuth(isItAuth);
+  }, []);
+
+  useEffect(() => {
+    const uid = localStorage.getItem("uid");
+    setUserId(uid);
+  }, []);
+
   useEffect(() => {
     const favoritesCollectionRef = collection(db, 'favorites');
 
@@ -67,8 +80,11 @@ export const RecipeCard = () => {
     getFavoriteRecipes();
   }, [version]);
 
+  if(isAuth == "false"){
+    window.location.pathname = "/account";
+  }
   return (
-    <div className="favorite-card">
+      <div className="favorite-card">
       <div className="recipe-display">
         {currentPosts.map((item) => {
           return (
