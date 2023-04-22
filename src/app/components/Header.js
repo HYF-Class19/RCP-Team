@@ -11,8 +11,10 @@ import { Button } from "primereact/button";
 
 
 export const Header = () => {
+  if (!localStorage.getItem("isAuth")) {
+    localStorage.setItem("isAuth", "false");
+  }
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
-
 
   const signUserOut = () => {
     signOut(auth).then(() => {
