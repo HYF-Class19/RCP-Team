@@ -1,8 +1,9 @@
-import React, { useState, useRef } from 'react';
+'use client';
+import React, { useState, useRef, useEffect } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../services/Firebase";
-
+import { v4 as uuidv4 } from 'uuid';
 import { InputText } from "primereact/inputtext";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
@@ -18,6 +19,8 @@ export const Join = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agree, setAgree] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
+  const [userId, setUserId] = useState("")
   const toast = useRef(null);
 
   const handleRegister = async (e) => {
@@ -41,6 +44,7 @@ export const Join = () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
+      const uid = user.uid;
       console.log("User registered:", user.email);
       // Add additional user data to Firestore
       const userRef = doc(db, "users", userCredential.user.uid);
@@ -49,20 +53,21 @@ export const Join = () => {
         username: username,
         email: email,
       })
-
-      // TODO: Redirect user to the login page or home page
+      localStorage.setItem("isAuth", "true");
+      localStorage.setItem("email", email);
+      localStorage.setItem("uid", uid);
+      window.location.pathname = "../components/Favorites";
     } catch (error) {
       console.error("Error registering user:", error);
       toast.current.show({ severity: "error", summary: "Error", detail: error.message });
     }
-     // Submit the form data
-     console.log({ name, email, password });
      toast.current.show({
        severity: "success",
        summary: "Success",
        detail: "Registered successfully",
        life: 3000,
      });
+     
   };
 
   
@@ -101,6 +106,7 @@ export const Join = () => {
               value={email} 
               onChange={(e) => setEmail(e.target.value)} 
               required
+              key={uuidv4()}
             />
           </div>
           <div className="py-2">
