@@ -16,7 +16,7 @@ export const ContactForm = () => {
     } = useForm();
   
     const onSubmit = (data) => {
-      console.log(data);
+      //console.log(data);
       setSuccessMsg("Thank you for contacting us! We will return to you as soon as possible.");
       reset();
     };

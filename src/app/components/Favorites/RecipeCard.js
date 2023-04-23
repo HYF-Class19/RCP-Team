@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 import '../../components/FilterComponent/RecipeCard.css';
 import { db } from '../../services/Firebase';
-import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, deleteDoc, where, query } from 'firebase/firestore';
 import { Toast } from 'primereact/toast';
 import Link from 'next/link';
 import { Paginate } from '../FilterComponent/Paginate';
@@ -18,6 +18,8 @@ export const RecipeCard = () => {
   const toast = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(8);
+  const [isAuth, setIsAuth] = useState(false);
+  const [userId, setUserId] = useState("")
 
   // HANDLE PAGINATION
   const indexOfLastPost = currentPage * postsPerPage;
@@ -54,21 +56,36 @@ export const RecipeCard = () => {
     setVersion(version + 1);
   };
 
+
+  useEffect(() => {
+    const isItAuth = localStorage.getItem("isAuth");
+    setIsAuth(isItAuth);
+  }, []);
+
+  useEffect(() => {
+    const uid = localStorage.getItem("uid");
+    setUserId(uid);
+  }, []);
   useEffect(() => {
     const favoritesCollectionRef = collection(db, 'favorites');
-
+  
     const getFavoriteRecipes = async () => {
-      const data = await getDocs(favoritesCollectionRef);
+      const data = await getDocs(
+        query(favoritesCollectionRef, where('userId', '==', userId))
+      );
       setFavoriteRecipes(
         data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       );
     };
-
+  
     getFavoriteRecipes();
-  }, [version]);
+  }, [version, userId]);
 
+  if(isAuth == "false"){
+    window.location.pathname = "/account";
+  }
   return (
-    <div className="favorite-card">
+      <div className="favorite-card">
       <div className="recipe-display">
         {currentPosts.map((item) => {
           return (

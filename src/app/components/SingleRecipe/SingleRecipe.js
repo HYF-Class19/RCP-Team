@@ -2,12 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./SingleRecipe.css";
 import Image from "next/image";
-import alarm from "../../../../public/assets/alarm.jpeg";
-import people from "../../../../public/assets/people.jpeg";
 import Link from "next/link";
 import { ShowRating } from "./ShowRating";
 import { UpdateRating } from "./UpdateRating";
-import "primeicons/primeicons.css";
 import { db } from "../../services/Firebase";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { Toast } from "primereact/toast";
@@ -25,8 +22,15 @@ export const SingleRecipe = (props) => {
   const [version, setVersion] = useState(1);
   const [ratingCollection, setRatingCollection] = useState([]);
   const usersCollectionRef = collection(db, "rating");
+  const [userId, setUserId] = useState("")
 
   const favoritesCollectionRef = collection(db, "favorites");
+  
+  useEffect(() => {
+    const uid = localStorage.getItem("uid");
+    setUserId(uid);
+  }, []);
+
 
   useEffect(() => {
     const getFavoriteRecipes = async () => {
@@ -41,13 +45,13 @@ export const SingleRecipe = (props) => {
       const dataArr = data.docs.map((doc) => ({ ...doc.data() }));
       setRatingCollection(dataArr);
     };
-
     getFavoriteRecipes();
     getRating();
   }, []);
 
   const createFavorites = async () => {
     const checkDuplicate = {
+      userId: userId,
       image: recipeImage,
       servings: recipeServings,
       time: recipeTime,
@@ -56,11 +60,12 @@ export const SingleRecipe = (props) => {
     };
 
     const duplicateObject = checkFavorites.some(
-      (obj) => obj.recipeID === checkDuplicate.recipeID
+      (obj) => obj.recipeID === checkDuplicate.recipeID && obj.userId === userId
     );
 
     if (!duplicateObject) {
       await addDoc(favoritesCollectionRef, {
+        userId: userId,
         image: recipeImage,
         servings: recipeServings,
         time: recipeTime,
@@ -127,7 +132,7 @@ export const SingleRecipe = (props) => {
         <div>
           <Toast ref={toast} />
           <h2>
-            <Link href="#">HOME</Link> {">"} Dish Recipe
+            <Link href="#">Home</Link> {">"} Dish recipe
           </h2>
         </div>
         <div className="singleRecipe">
@@ -138,11 +143,11 @@ export const SingleRecipe = (props) => {
               ratingCollection={ratingCollection}
             />
             <div className="flex gap-3 align-items-center starRating">
-              <Image src={alarm} alt="time" width={40} height={40} />
+              <i className="pi  pi-hourglass"style={{ color: 'var(--primary-color)', fontSize: '30px' }}></i>
               <p>{recipe.readyInMinutes} min</p>
             </div>
             <div className="flex gap-3 align-items-center">
-              <Image src={people} alt="people" width={40} height={40} />
+            <i className="pi pi-users"style={{ color: 'var(--primary-color)', fontSize: '30px' }}></i>
               <p>{recipe.servings} persons</p>
             </div>
           </div>
